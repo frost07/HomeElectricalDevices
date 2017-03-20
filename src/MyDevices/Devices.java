@@ -6,8 +6,6 @@ import Interfaces.Electronics;
  * Created by frost on 13.03.2017.
  */
 public  class Devices implements Electronics{
-    //public  class Devices implements Electronics, Comparable{
-
    private String name;
     private String size;
     private String color;
