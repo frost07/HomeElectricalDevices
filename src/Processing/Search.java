@@ -2,7 +2,7 @@ package Processing;
 
 import MyDevices.Devices;
 import java.util.List;
-
+import java.util.Scanner;
 
 
 /**
@@ -10,7 +10,13 @@ import java.util.List;
  */
 public class Search {
 
-    public static void MySearch(List<Devices> list, int min, int max) {
+    public static void MySearch(List<Devices> list) {
+        System.out.println();
+        System.out.println("введите пределы поиска");
+        System.out.println("min =");
+        int min = (new Scanner(System.in)).nextInt();
+        System.out.println("max =");
+        int max = (new Scanner(System.in)).nextInt();
         System.out.println();
         System.out.println("Найденные приборы");
 
