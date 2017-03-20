@@ -24,6 +24,7 @@ public class Search {
         for (Devices i : list) {
             if (i.getPower() >= min && i.getPower() <= max) {
                 System.out.println(i.toString());
+                WriteToTXT.write("Search_Result.txt",i.toString());
             }
         }
     }

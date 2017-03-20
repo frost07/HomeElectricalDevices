@@ -30,6 +30,7 @@ public class Sorting {
 
         for (Devices i : list) {
             System.out.println(i.toString());
+           WriteToTXT.write("Sort.txt",i.toString());
         }
     }
 }

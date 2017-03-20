@@ -16,7 +16,7 @@ public class MainApplication {
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Введите число!");
             }
-        }
+        }//while
     }
 }
 

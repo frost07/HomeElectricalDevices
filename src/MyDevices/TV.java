@@ -4,8 +4,9 @@ package MyDevices;
  * Created by frost on 13.03.2017.
  */
 public class TV extends Devices {
-private int numberOfCchannels;
-    public TV(String name, String size, String color, int power,int numberOfCchannels) {
+    private int numberOfCchannels;
+
+    public TV(String name, String size, String color, int power, int numberOfCchannels) {
         super(name, size, color, power);
         this.numberOfCchannels = numberOfCchannels;
     }
@@ -19,7 +20,7 @@ private int numberOfCchannels;
     }
 
     public String toString() {
-        return super.toString()+ " [number of channels] "+ numberOfCchannels;
+        return super.toString() + " [number of channels] " + numberOfCchannels;
     }
 
     @Override

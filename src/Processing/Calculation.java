@@ -12,11 +12,13 @@ public class Calculation {
         System.out.println();
         System.out.println("рассчёт потребляемой мощности");
         int summ = 0;
-        for (Devices i :list) {
+        for (Devices i : list) {
             if (i.getState() == true) {
                 summ += i.getPower();
             }
         }
         System.out.println("потребляемая мощность " + summ);
+
+        WriteToTXT.write("Power.txt", "потребляемая мощность " + Integer.toString(summ));
     }
 }
