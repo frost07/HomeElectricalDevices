@@ -5,8 +5,11 @@ package MyDevices;
  */
 public class Computer extends Devices{
 
-
     public Computer(String name, String size, String color, int power) {
         super(name, size, color, power);
+    }
+
+    public String toString() {
+        return super.toString();
     }
 }

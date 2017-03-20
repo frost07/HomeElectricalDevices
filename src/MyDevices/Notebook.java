@@ -7,6 +7,10 @@ public class Notebook extends Computer {
     public Notebook(String name, String size, String color, int power) {
         super(name, size, color, power);
     }
+
+    public String toString() {
+        return super.toString();
+    }
 /*
     @Override
     public void on() {

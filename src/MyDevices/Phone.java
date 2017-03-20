@@ -4,21 +4,22 @@ package MyDevices;
  * Created by frost on 13.03.2017.
  */
 public class Phone extends Devices {
-
-    public Phone(String name, String size, String color, int power) {
+    private int batteryLifeTime;
+    public Phone(String name, String size, String color, int power, int batteryLifeTime) {
         super(name, size, color, power);
+        this.batteryLifeTime = batteryLifeTime;
+    }
+public String toString(){
+        return super.toString()+" [Battery life time] " + batteryLifeTime;
+}
+
+    public int getBatteryLifeTime() {
+        return batteryLifeTime;
     }
 
-    /*@Override
-    public void on() {
-        System.out.println("Включился");
+    public void setBatteryLifeTime(int batteryLifeTime) {
+        this.batteryLifeTime = batteryLifeTime;
     }
-
-    @Override
-    public void off() {
-        System.out.println("Выключился");
-    }*/
-
     @Override
     public void DoSomething() {
         System.out.println("Пошли гудки");

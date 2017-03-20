@@ -68,5 +68,9 @@ public  class Devices implements Electronics{
     public boolean getState(){
         return activated;
     }
+
+    public String toString(){
+        return getClass().getName() + " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
+    }
 }
 
