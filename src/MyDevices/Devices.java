@@ -62,7 +62,7 @@ public  class Devices implements Electronics{
     }
 
     @Override
-    public void DoSomething() {
+    public void doSomething() {
 
     }
     public boolean getState(){

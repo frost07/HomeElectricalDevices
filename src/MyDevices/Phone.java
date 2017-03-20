@@ -21,7 +21,7 @@ public String toString(){
         this.batteryLifeTime = batteryLifeTime;
     }
     @Override
-    public void DoSomething() {
+    public void doSomething() {
         System.out.println("Пошли гудки");
     }
 }
