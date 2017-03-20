@@ -3,13 +3,14 @@ package Processing;
 
 import MyDevices.Devices;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
  * Created by frost on 13.03.2017.
  */
 public class Sorting {
-    public static void MySort(List<Devices> list) {
+    public static void MySort(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("Отсортированные приборы");
 

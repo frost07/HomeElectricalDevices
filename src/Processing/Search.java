@@ -1,6 +1,8 @@
 package Processing;
 
 import MyDevices.Devices;
+
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ import java.util.Scanner;
  */
 public class Search {
 
-    public static void MySearch(List<Devices> list) {
+    public static void MySearch(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("введите пределы поиска");
         System.out.println("min =");

@@ -2,13 +2,14 @@ package Processing;
 
 import MyDevices.Devices;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Created by frost on 13.03.2017.
  */
 public class Calculation {
-    public static void UsedPower(List<Devices> list) {
+    public static void UsedPower(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("рассчёт потребляемой мощности");
         int summ = 0;
