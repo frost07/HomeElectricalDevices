@@ -1,11 +1,14 @@
+import MyDevices.Devices;
 import Processing.*;
+
+import java.io.IOException;
 
 /**
  * Created by frost on 12.03.2017.
  */
 public class MainApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         boolean caughtException = true;
         while (caughtException) {
@@ -17,6 +20,7 @@ public class MainApplication {
                 System.out.println("Введите число!");
             }
         }//while
+
 
     }
 }

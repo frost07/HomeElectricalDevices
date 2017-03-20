@@ -1,12 +1,13 @@
 package Processing;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * Created by frost on 20.03.2017.
  */
 public class Menu {
-    public static void choice() {
+    public static void choice() throws IOException {
         System.out.println("1-сортировка, 2-сумма, 3-поиск, 0-выход");
         boolean notExit = true;
         while (notExit) {
