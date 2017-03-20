@@ -8,12 +8,14 @@ import java.util.List;
  * Created by frost on 13.03.2017.
  */
 public class Calculation {
-    public static void UsedPower(List<Devices> list){
+    public static void UsedPower(List<Devices> list) {
         System.out.println();
         System.out.println("рассчёт потребляемой мощности");
-        int summ=0;
-        for(int i = 0; i < list.size(); i++){
-            if(list.get(i).getState()){summ+=list.get(i).getPower();}
+        int summ = 0;
+        for (Devices i :list) {
+            if (i.getState() == true) {
+                summ += i.getPower();
+            }
         }
         System.out.println("потребляемая мощность " + summ);
     }
