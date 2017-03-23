@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Search {
 
-    public static void MySearch(List<Devices> list) throws IOException {
+    public static void mySearch(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("введите пределы поиска");
         System.out.println("min =");
@@ -26,7 +26,7 @@ public class Search {
         for (Devices i : list) {
             if (i.getPower() >= min && i.getPower() <= max) {
                 System.out.println(i.toString());
-                WriteToTXT.write("Search_Result.txt",i.toString());
+                WriteFileTXT.write("Search_Result.txt",i.toString());
             }
         }
     }

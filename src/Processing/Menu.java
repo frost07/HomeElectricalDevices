@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Menu {
     public static void choice() throws IOException {
-        System.out.println("1-сортировка, 2-сумма, 3-поиск, 0-выход");
+        System.out.println("Введите число для: 1-сортировка1, 2-сумма, 3-поиск, 0-выход");
         boolean notExit = true;
         while (notExit) {
             Scanner scanner = new Scanner(System.in);
@@ -16,20 +16,20 @@ public class Menu {
 
             switch (point) {
                 case 1:
-                    Sorting.MySort(DeviceList.getDeviceList());
+                    Sorting.mySort(DeviceList.getDeviceList());
                     break;
                 case 2:
-                    Calculation.UsedPower(DeviceList.getDeviceList());
+                    Calculation.usedPower(DeviceList.getDeviceList());
                     break;
                 case 3:
                     boolean caughtException = true;
                     while (caughtException) {
                     try {
-                        Search.MySearch(DeviceList.getDeviceList());
+                        Search.mySearch(DeviceList.getDeviceList());
                         caughtException = false;
 
                     } catch (java.util.InputMismatchException e) {
-                        System.out.println("Вводите числа");
+                        System.out.println("Вводите числа!");
                     }
                 }//while
                     break;

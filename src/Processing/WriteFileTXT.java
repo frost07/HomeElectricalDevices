@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 /**
  * Created by frost on 20.03.2017.
  */
-public class WriteToTXT {
+public class WriteFileTXT {
     public static void write(String nameFile, String arg) throws IOException {
 
             PrintWriter writer = new PrintWriter(new FileWriter(nameFile, true));

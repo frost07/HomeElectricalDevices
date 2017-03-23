@@ -10,7 +10,7 @@ import java.util.*;
  * Created by frost on 13.03.2017.
  */
 public class Sorting {
-    public static void MySort(List<Devices> list) throws IOException {
+    public static void mySort(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("Отсортированные приборы");
 
@@ -31,7 +31,7 @@ public class Sorting {
 
         for (Devices i : list) {
             System.out.println(i.toString());
-           WriteToTXT.write("Sort.txt",i.toString());
+           WriteFileTXT.write("Sort.txt",i.toString());
         }
     }
 }

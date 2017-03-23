@@ -1,4 +1,3 @@
-import MyDevices.Devices;
 import Processing.*;
 
 import java.io.IOException;
@@ -20,8 +19,5 @@ public class MainApplication {
                 System.out.println("Введите число!");
             }
         }//while
-
-
     }
 }
-

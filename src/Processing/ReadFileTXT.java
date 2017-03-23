@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class ReadFileTXT {
     public static List<String> read(String name) throws IOException {
-        List<String> list = Files.readAllLines(Paths.get(name));
-        return list;
+        return Files.readAllLines(Paths.get(name));
     }
 }

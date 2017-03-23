@@ -9,17 +9,17 @@ import java.util.List;
  * Created by frost on 13.03.2017.
  */
 public class Calculation {
-    public static void UsedPower(List<Devices> list) throws IOException {
+    public static void usedPower(List<Devices> list) throws IOException {
         System.out.println();
         System.out.println("рассчёт потребляемой мощности");
         int summ = 0;
         for (Devices i : list) {
-            if (i.getState() == true) {
+            if (i.getState()) {
                 summ += i.getPower();
             }
         }
         System.out.println("потребляемая мощность " + summ);
 
-        WriteToTXT.write("Power.txt", "потребляемая мощность " + Integer.toString(summ));
+        WriteFileTXT.write("Power.txt", "потребляемая мощность " + Integer.toString(summ));
     }
 }
