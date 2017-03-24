@@ -1,5 +1,6 @@
-import Processing.*;
+package javaa;
 
+import javaa.Processing.Menu;
 import java.io.IOException;
 
 /**
@@ -14,6 +15,7 @@ public class MainApplication {
             try {
                 Menu.choice();
                 caughtException = false;
+
 
             } catch (java.util.InputMismatchException e) {
                 System.out.println("Введите число!");

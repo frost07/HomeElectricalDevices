@@ -1,6 +1,6 @@
-package MyDevices;
+package javaa.MyDevices;
 
-import Interfaces.Electronics;
+import javaa.Interfaces.Electronics;
 
 /**
  * Created by frost on 13.03.2017.
