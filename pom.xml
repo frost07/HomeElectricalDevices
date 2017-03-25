@@ -23,7 +23,7 @@
         </dependency>
     </dependencies>
     <build>
-        <sourceDirectory>src/javaa</sourceDirectory>
+        <sourceDirectory>src/java</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
