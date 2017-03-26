@@ -1,10 +1,11 @@
-package javaa.Processing;
+package Processing;
 
-
-import javaa.MyDevices.Devices;
+import MyDevices.Devices;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Created by frost on 13.03.2017.

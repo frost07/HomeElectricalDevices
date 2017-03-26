@@ -1,6 +1,6 @@
-package javaa.Processing;
+package Processing;
 
-import javaa.MyDevices.Devices;
+import MyDevices.Devices;
 
 import java.io.IOException;
 import java.util.List;

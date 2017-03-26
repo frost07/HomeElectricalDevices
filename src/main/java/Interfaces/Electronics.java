@@ -1,4 +1,4 @@
-package javaa.Interfaces;
+package Interfaces;
 
 /**
  * Created by frost on 13.03.2017.

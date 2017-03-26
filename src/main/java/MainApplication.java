@@ -1,6 +1,4 @@
-package javaa;
-
-import javaa.Processing.Menu;
+import Processing.Menu;
 import java.io.IOException;
 
 /**

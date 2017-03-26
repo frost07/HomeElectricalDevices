@@ -1,9 +1,9 @@
-package javaa.Processing;
+package Processing;
 
-import javaa.MyDevices.Devices;
-import javaa.MyDevices.Phone;
-import javaa.MyDevices.TV;
-import javaa.MyDevices.Computer;
+import MyDevices.Devices;
+import MyDevices.Phone;
+import MyDevices.TV;
+import MyDevices.Computer;
 
 import java.io.IOException;
 import java.util.ArrayList;

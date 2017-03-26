@@ -1,4 +1,4 @@
-package javaa.Processing;
+package Processing;
 
 import java.io.FileWriter;
 import java.io.IOException;

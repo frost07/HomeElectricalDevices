@@ -1,4 +1,4 @@
-package javaa.MyDevices;
+package MyDevices;
 
 /**
  * Created by frost on 13.03.2017.

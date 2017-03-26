@@ -1,0 +1,27 @@
+MyDevices.Phone [name iphone] [size small] [color green] [power 2] [Battery life time] 256
+MyDevices.Phone [name xiaomi] [size big] [color black] [power 3] [Battery life time] 155
+MyDevices.Phone [name samsung] [size big] [color silver] [power 5] [Battery life time] 178
+MyDevices.TV [name sony] [size small] [color silver] [power 6] [number of channels] 150
+MyDevices.TV [name samsung] [size middle] [color blue] [power 8] [number of channels] 100
+MyDevices.TV [name phillips] [size big] [color green] [power 10] [number of channels] 100
+MyDevices.Computer [name lenovo] [size small] [color black] [power 12] [size HDD] 512
+MyDevices.Computer [name dell] [size middle] [color pink] [power 25] [size HDD] 256
+MyDevices.Computer [name asus] [size middle] [color black] [power 30] [size HDD] 512
+MyDevices.Phone [name iphone] [size small] [color green] [power 2] [Battery life time] 256
+MyDevices.Phone [name xiaomi] [size big] [color black] [power 3] [Battery life time] 155
+MyDevices.Phone [name samsung] [size big] [color silver] [power 5] [Battery life time] 178
+MyDevices.TV [name sony] [size small] [color silver] [power 6] [number of channels] 150
+MyDevices.TV [name samsung] [size middle] [color blue] [power 8] [number of channels] 100
+MyDevices.TV [name phillips] [size big] [color green] [power 10] [number of channels] 100
+MyDevices.Computer [name lenovo] [size small] [color black] [power 12] [size HDD] 512
+MyDevices.Computer [name dell] [size middle] [color pink] [power 25] [size HDD] 256
+MyDevices.Computer [name asus] [size middle] [color black] [power 30] [size HDD] 512
+MyDevices.Phone [name iphone] [size small] [color green] [power 2] [Battery life time] 256
+MyDevices.Phone [name xiaomi] [size big] [color black] [power 3] [Battery life time] 155
+MyDevices.Phone [name samsung] [size big] [color silver] [power 5] [Battery life time] 178
+MyDevices.TV [name sony] [size small] [color silver] [power 6] [number of channels] 150
+MyDevices.TV [name samsung] [size middle] [color blue] [power 8] [number of channels] 100
+MyDevices.TV [name phillips] [size big] [color green] [power 10] [number of channels] 100
+MyDevices.Computer [name lenovo] [size small] [color black] [power 12] [size HDD] 512
+MyDevices.Computer [name dell] [size middle] [color pink] [power 25] [size HDD] 256
+MyDevices.Computer [name asus] [size middle] [color black] [power 30] [size HDD] 512
