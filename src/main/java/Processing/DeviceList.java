@@ -1,11 +1,14 @@
 package Processing;
 
+import MyDevices.Computer;
 import MyDevices.Devices;
 import MyDevices.Phone;
 import MyDevices.TV;
-import MyDevices.Computer;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +18,15 @@ import java.util.List;
 public class DeviceList {
     public static List<Devices> getDeviceList() throws IOException {
 
-        String fileName = "src/main/Devices.txt";
+        String fileName = "Devices.txt";
+        InputStream in = DeviceList.class.getClassLoader().getResourceAsStream(fileName);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        String arg = null;
         List<Devices> list = new ArrayList<Devices>();
 
         int i = 0;
-        for (String arg : ReadFileTXT.read(fileName)) {
+
+        while ((arg = reader.readLine()) != null) {
             String[] parts = arg.split("/");
             if (parts[0].equals("Phone")) {
                 list.add(new Phone(parts[1], parts[2], parts[3], Integer.parseInt(parts[4]), Integer.parseInt(parts[5])));
@@ -30,9 +37,10 @@ public class DeviceList {
             }
             i++;
         }
+
         list.get(0).on();
         list.get(4).on();
         list.get(7).on();
-      return list;
+        return list;
     }
 }

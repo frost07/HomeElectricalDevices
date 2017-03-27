@@ -1,0 +1,9 @@
+Phone/xiaomi/big/black/3/155
+Phone/iphone/small/green/2/256
+Phone/samsung/big/silver/5/178
+TV/phillips/big/green/10/100
+TV/samsung/middle/blue/8/100
+TV/sony/small/silver/6/150
+Computer/dell/middle/pink/25/256
+Computer/asus/middle/black/30/512
+Computer/lenovo/small/black/12/512

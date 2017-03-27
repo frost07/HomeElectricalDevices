@@ -23,14 +23,13 @@
         </dependency>
     </dependencies>
     <build>
-        <sourceDirectory>/src/main/java</sourceDirectory>
-
+        <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
-                    <resource>
-                        <directory>src/main</directory>
-                    </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
         </resources>
-        <plugins>
+      <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
