@@ -15,7 +15,7 @@ import java.util.List;
 public class DeviceList {
     public static List<Devices> getDeviceList() throws IOException {
 
-        String fileName = "Devices.txt";
+        String fileName = "src/main/Devices.txt";
         List<Devices> list = new ArrayList<Devices>();
 
         int i = 0;
