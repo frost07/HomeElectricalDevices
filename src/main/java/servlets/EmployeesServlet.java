@@ -1,7 +1,6 @@
 package servlets;
 
-import MyDevices.Devices;
-import Processing.DeviceList;
+import dao.JDBCUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,16 +8,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.sql.Connection;
 
 @WebServlet(urlPatterns = "/employees", loadOnStartup = 1)
 public class EmployeesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Devices> employees = DeviceList.getDeviceList();
+        Connection conn = JDBCUtils.getConnectionPool().checkOut();
 
-        request.setAttribute("employees", employees);
+        request.setAttribute("employees", JDBCUtils.getEmployees(conn));
+        JDBCUtils.getConnectionPool().checkIn(conn);
+
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }
 
