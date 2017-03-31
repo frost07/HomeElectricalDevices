@@ -37,7 +37,6 @@ public class DeviceList {
             }
             i++;
         }
-
         list.get(0).on();
         list.get(4).on();
         list.get(7).on();

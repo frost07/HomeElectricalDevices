@@ -15,12 +15,8 @@ import java.util.List;
 public class EmployeesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         List<Devices> employees = DeviceList.getDeviceList();
-        //List<Employee> employees = new ArrayList<>();
-       /* for (int i = 0; i < 100; i++) {
-            Employee employee = new Employee("Name #" + i, "Position #" + i, "Office #" + i, "Age #" + i, "Start Date #" + i, "Salary #" + i);
-            employees.add(employee);
-        }*/
         request.setAttribute("employees", employees);
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }

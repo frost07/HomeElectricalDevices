@@ -5,6 +5,11 @@ package MyDevices;
  */
 public class Phone extends Devices {
     private int batteryLifeTime;
+    private String type = "Phone";
+
+    public String getType() {
+        return type;
+    }
 
     public Phone(String name, String size, String color, int power, int batteryLifeTime) {
         super(name, size, color, power);
@@ -12,7 +17,7 @@ public class Phone extends Devices {
     }
 
     public String toString() {
-        return super.toString() + " [Battery life time] " + batteryLifeTime;
+        return super.toString() + " [Battery life time " + batteryLifeTime+"] ";
     }
 
     public int getBatteryLifeTime() {
@@ -23,8 +28,4 @@ public class Phone extends Devices {
         this.batteryLifeTime = batteryLifeTime;
     }
 
-    @Override
-    public void doSomething() {
-        System.out.println("Пошли гудки");
-    }
 }
