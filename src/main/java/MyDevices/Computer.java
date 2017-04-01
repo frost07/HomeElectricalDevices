@@ -5,9 +5,17 @@ package MyDevices;
  */
 public class Computer extends Devices {
     private int sizeHDD;
+    private String type = "Computer";
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    public Computer(String name, String size, String color, int power, int sizeHDD) {
+    public Computer(String type, String name, String size, String color, int power, int sizeHDD) {
         super(name, size, color, power);
+        this.type = type;
         this.sizeHDD = sizeHDD;
     }
 
@@ -20,6 +28,6 @@ public class Computer extends Devices {
     }
 
     public String toString() {
-        return super.toString() + " [size HDD] " + sizeHDD;
+        return super.toString() + " [size HDD " + sizeHDD + "] ";
     }
 }

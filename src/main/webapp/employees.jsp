@@ -9,32 +9,38 @@
 <table id="employees" class="display" cellspacing="0" width="100%">
     <thead>
     <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Size</th>
         <th>Color</th>
         <th>Power</th>
+
     </tr>
     </thead>
     <tfoot>
     <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Size</th>
         <th>Color</th>
         <th>Power</th>
+        
     </tr>
     </tfoot>
     <tbody>
     <c:forEach items="${employees}" var="employee">
         <tr>
+            <td>${employee.type}</td>
             <td>${employee.name}</td>
             <td>${employee.size}</td>
             <td>${employee.color}</td>
             <td>${employee.power}</td>
+
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<a href="test" target="_blank">Test Button</a>
+<a>Made by Alexandr Domenikan</a>
 <script src="<c:url value="/resources/js/lib/jquery-1.12.4.js"/>"></script>
 <script src="<c:url value="/resources/js/lib/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/resources/js/employees.js"/>"></script>

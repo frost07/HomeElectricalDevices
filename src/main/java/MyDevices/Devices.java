@@ -9,8 +9,14 @@ public  class Devices implements Electronics{
    private String name;
     private String size;
     private String color;
+
+    public String getType() {
+        return type;
+    }
+
     private int power;
     private boolean activated=false;
+    private String type;
 
     public Devices(String name, String size, String color, int power) {
         this.name = name;
@@ -18,6 +24,8 @@ public  class Devices implements Electronics{
         this.color = color;
         this.power = power;
     }
+
+
 
     public void setName(String name) {
         this.name = name;
@@ -59,16 +67,12 @@ public  class Devices implements Electronics{
         activated=false;
     }
 
-    @Override
-    public void doSomething() {
-
-    }
     public boolean getState(){
         return activated;
     }
 
     public String toString(){
-        return getClass().getName() + " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
+        return type + " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
     }
 }
 

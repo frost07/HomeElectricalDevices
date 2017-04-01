@@ -7,6 +7,4 @@ public interface Electronics {
 
     public abstract void on();
     public abstract void off();
-    public abstract void doSomething();
-
 }

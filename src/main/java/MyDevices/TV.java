@@ -5,9 +5,17 @@ package MyDevices;
  */
 public class TV extends Devices {
     private int numberOfCchannels;
+private String type ="TV";
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    public TV(String name, String size, String color, int power, int numberOfCchannels) {
+    public TV(String type, String name, String size, String color, int power, int numberOfCchannels) {
         super(name, size, color, power);
+        this.type = type;
         this.numberOfCchannels = numberOfCchannels;
     }
 
@@ -20,11 +28,7 @@ public class TV extends Devices {
     }
 
     public String toString() {
-        return super.toString() + " [number of channels] " + numberOfCchannels;
+        return super.toString() + " [number of channels "+ numberOfCchannels +"] ";
     }
 
-    @Override
-    public void doSomething() {
-        System.out.println("и снова показывает рекламу");
-    }
 }

@@ -1,6 +1,9 @@
 package dao;
 
+import MyDevices.Computer;
 import MyDevices.Devices;
+import MyDevices.Phone;
+import MyDevices.TV;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -63,20 +66,22 @@ public class JDBCUtils {
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()) {
-
+                String type = rs.getString("type");
                 String name = rs.getString("name");
                 String size = rs.getString("size");
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
+                int feature = rs.getInt("feature");
 
 
-                Devices employee = new Devices(name,size,color,power);
-                employee.setName(name);
-                employee.setSize(size);
-                employee.setColor(color);
-                employee.setPower(power);
+                if (type.equals("Phone")) {
+                    list.add(new Phone(type, name, size, color, power, feature));
+                } else if (type.equals("TV")) {
+                    list.add(new TV(type, name, size, color, power, feature));
+                } else if (type.equals("Computer")) {
+                    list.add(new Computer(type, name, size, color, power, feature));
+                }
 
-                list.add(employee);
             }
 
 
@@ -84,20 +89,24 @@ public class JDBCUtils {
             e.printStackTrace();
         }
 
-
+for(Devices i : list){
+    System.out.println(i.toString());
+}
         return list;
     }
 
     public static void insertEmployee(Connection conn, Devices employee) {
-        String sql = "insert into employees(name,size,color,power) values (?,?,?,?)";
+        String sql = "insert into employees(type,name,size,color,power) values (?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {
             pstm = conn.prepareStatement(sql);
-            pstm.setString(1, employee.getName());
-            pstm.setString(2, employee.getSize());
-            pstm.setString(3, employee.getColor());
-            pstm.setInt(4, employee.getPower());
+            pstm.setString(1, employee.getType());
+            pstm.setString(2, employee.getName());
+            pstm.setString(3, employee.getSize());
+            pstm.setString(4, employee.getColor());
+            pstm.setInt(5, employee.getPower());
+
 
             pstm.executeUpdate();
         } catch (SQLException e) {

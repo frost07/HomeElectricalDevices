@@ -5,14 +5,24 @@ package MyDevices;
  */
 public class Phone extends Devices {
     private int batteryLifeTime;
+    private String type = "Phone";
 
-    public Phone(String name, String size, String color, int power, int batteryLifeTime) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Phone(String type, String name, String size, String color, int power, int batteryLifeTime) {
         super(name, size, color, power);
+        this.type = type;
         this.batteryLifeTime = batteryLifeTime;
     }
 
     public String toString() {
-        return super.toString() + " [Battery life time] " + batteryLifeTime;
+        return super.toString() + " [Battery life time " + batteryLifeTime+"] ";
     }
 
     public int getBatteryLifeTime() {
@@ -23,8 +33,4 @@ public class Phone extends Devices {
         this.batteryLifeTime = batteryLifeTime;
     }
 
-    @Override
-    public void doSomething() {
-        System.out.println("Пошли гудки");
-    }
 }
