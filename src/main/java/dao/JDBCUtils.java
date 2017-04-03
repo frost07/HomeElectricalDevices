@@ -57,9 +57,9 @@ public class JDBCUtils {
         return prop;
     }
 
-    public static Collection<Devices> getEmployees(Connection conn) {
+    public static Collection<Devices> getComputer(Connection conn) {
         List<Devices> list = new ArrayList<>();
-        String sql = "select * from employees";
+        String sql = "SELECT * FROM computer";
         PreparedStatement pstm = null;
         try {
             pstm = conn.prepareStatement(sql);
@@ -71,32 +71,68 @@ public class JDBCUtils {
                 String size = rs.getString("size");
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
-                int feature = rs.getInt("feature");
-
-
-                if (type.equals("Phone")) {
-                    list.add(new Phone(type, name, size, color, power, feature));
-                } else if (type.equals("TV")) {
-                    list.add(new TV(type, name, size, color, power, feature));
-                } else if (type.equals("Computer")) {
-                    list.add(new Computer(type, name, size, color, power, feature));
-                }
-
+                int sizeHDD = rs.getInt("sizeHDD");
+                list.add(new Computer(type, name, size, color, power, sizeHDD));
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return list;
+    }
 
-for(Devices i : list){
-    System.out.println(i.toString());
-}
+    public static Collection<Devices> getTV(Connection conn) {
+        List<Devices> list = new ArrayList<>();
+        String sql = "SELECT * FROM tv";
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                String type = rs.getString("type");
+                String name = rs.getString("name");
+                String size = rs.getString("size");
+                String color = rs.getString("color");
+                int power = rs.getInt("power");
+                int numberOfChannels = rs.getInt("numberOfChannels");
+                list.add(new TV(type, name, size, color, power, numberOfChannels));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public static Collection<Devices> getPhone(Connection conn) {
+        List<Devices> list = new ArrayList<>();
+        String sql = "SELECT * FROM phone";
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(sql);
+            ResultSet rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                String type = rs.getString("type");
+                String name = rs.getString("name");
+                String size = rs.getString("size");
+                String color = rs.getString("color");
+                int power = rs.getInt("power");
+                int batteryLifeTime = rs.getInt("batteryLifeTime");
+                list.add(new Phone(type, name, size, color, power, batteryLifeTime));
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return list;
     }
 
     public static void insertEmployee(Connection conn, Devices employee) {
-        String sql = "insert into employees(type,name,size,color,power) values (?,?,?,?,?)";
+        String sql = "INSERT INTO employees(type,name,size,color,power) VALUES (?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {

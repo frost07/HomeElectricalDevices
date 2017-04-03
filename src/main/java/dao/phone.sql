@@ -19,16 +19,16 @@
 -- Table structure for table `employees`
 --
 
-DROP TABLE IF EXISTS `employees`;
+DROP TABLE IF EXISTS `phone`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `employees` (
+CREATE TABLE `phone` (
   `type` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `size` varchar(100) DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
   `power` int(100) DEFAULT NULL,
-  `feature` int(100) DEFAULT NULL
+  `batteryLifeTime` int(100) DEFAULT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,10 +37,10 @@ CREATE TABLE `employees` (
 -- Dumping data for table `employees`
 --
 
-LOCK TABLES `employees` WRITE;
-/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES ('Phone','xiaomi','big','black','3','155'),('Phone','iphone','small','green','2','256'),('Phone','samsung','big','silver','5','178'),('TV','phillips','big','green','10','100'),('TV','samsung','middle','blue','8','100'),('TV','sony','small','silver','6','150'),('Computer','dell','middle','pink','25','256'),('Computer','asus','midle','black','30','512'),('Computer','lenovo','small','black','12','512');
-/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+LOCK TABLES `phone` WRITE;
+/*!40000 ALTER TABLE `phone` DISABLE KEYS */;
+INSERT INTO `phone` VALUES ('Phone','xiaomi','big','black','3','155'),('Phone','iphone','small','green','2','256'),('Phone','samsung','big','silver','5','178');
+/*!40000 ALTER TABLE `phone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

@@ -17,8 +17,11 @@ public class EmployeesServlet extends HttpServlet {
 
         Connection conn = JDBCUtils.getConnectionPool().checkOut();
 
-        request.setAttribute("employees", JDBCUtils.getEmployees(conn));
+        request.setAttribute("phone", JDBCUtils.getPhone(conn));
+        request.setAttribute("computer", JDBCUtils.getComputer(conn));
+        request.setAttribute("tv", JDBCUtils.getTV(conn));
         JDBCUtils.getConnectionPool().checkIn(conn);
+
 
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }

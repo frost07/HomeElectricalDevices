@@ -5,7 +5,7 @@ import Interfaces.Electronics;
 /**
  * Created by frost on 13.03.2017.
  */
-public  class Devices implements Electronics{
+public abstract class Devices implements Electronics{
    private String name;
     private String size;
     private String color;

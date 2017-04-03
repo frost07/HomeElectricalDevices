@@ -4,7 +4,7 @@ package MyDevices;
  * Created by frost on 13.03.2017.
  */
 public class TV extends Devices {
-    private int numberOfCchannels;
+    private int numberOfChannels;
 private String type ="TV";
     public String getType() {
         return type;
@@ -13,22 +13,22 @@ private String type ="TV";
         this.type = type;
     }
 
-    public TV(String type, String name, String size, String color, int power, int numberOfCchannels) {
+    public TV(String type, String name, String size, String color, int power, int numberOfChannels) {
         super(name, size, color, power);
         this.type = type;
-        this.numberOfCchannels = numberOfCchannels;
+        this.numberOfChannels = numberOfChannels;
     }
 
-    public int getNumberOfCchannels() {
-        return numberOfCchannels;
+    public int getNumberOfChannels() {
+        return numberOfChannels;
     }
 
-    public void setNumberOfCchannels(int numberOfCchannels) {
-        this.numberOfCchannels = numberOfCchannels;
+    public void setNumberOfChannels(int numberOfChannels) {
+        this.numberOfChannels = numberOfChannels;
     }
 
     public String toString() {
-        return super.toString() + " [number of channels "+ numberOfCchannels +"] ";
+        return super.toString() + " [number of channels "+ numberOfChannels +"] ";
     }
 
 }
