@@ -134,8 +134,8 @@ public class JDBCUtils {
         return list;
     }
 
-    public static void insertEmployee(Connection conn, Devices employee) {
-        String sql = "INSERT INTO employees(type,name,size,color,power) VALUES (?,?,?,?,?)";
+    public static void insertPhone(Connection conn, Phone employee) {
+        String sql = "INSERT INTO phone(type,name,size,color,power,batteryLifeTime) VALUES (?,?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {
@@ -145,6 +145,49 @@ public class JDBCUtils {
             pstm.setString(3, employee.getSize());
             pstm.setString(4, employee.getColor());
             pstm.setInt(5, employee.getPower());
+            pstm.setInt(6, employee.getBatteryLifeTime());
+
+
+            pstm.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public static void insertComputer(Connection conn, Computer employee) {
+        String sql = "INSERT INTO computer(type,name,size,color,power,sizeHDD) VALUES (?,?,?,?,?,?)";
+
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, employee.getType());
+            pstm.setString(2, employee.getName());
+            pstm.setString(3, employee.getSize());
+            pstm.setString(4, employee.getColor());
+            pstm.setInt(5, employee.getPower());
+            pstm.setInt(6, employee.getSizeHDD());
+
+
+            pstm.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public static void insertTV(Connection conn, TV employee) {
+        String sql = "INSERT INTO tv(type,name,size,color,power,numberOfChannels) VALUES (?,?,?,?,?,?)";
+
+        PreparedStatement pstm = null;
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, employee.getType());
+            pstm.setString(2, employee.getName());
+            pstm.setString(3, employee.getSize());
+            pstm.setString(4, employee.getColor());
+            pstm.setInt(5, employee.getPower());
+            pstm.setInt(6, employee.getNumberOfChannels());
 
 
             pstm.executeUpdate();
