@@ -13,8 +13,8 @@ private String type ="TV";
         this.type = type;
     }
 
-    public TV(String type, String name, String size, String color, int power, int numberOfChannels, int state) {
-        super(name, size, color, power, state);
+    public TV(String type, String name, String size, String color, int power, int numberOfChannels) {
+        super(name, size, color, power);
         this.type = type;
         this.numberOfChannels = numberOfChannels;
     }

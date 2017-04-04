@@ -17,9 +17,9 @@ public class EmployeesServlet extends HttpServlet {
 
         Connection conn = JDBCUtils.getConnectionPool().checkOut();
 
-        request.setAttribute("phone", JDBCUtils.getPhone(conn));
-        request.setAttribute("computer", JDBCUtils.getComputer(conn));
-        request.setAttribute("tv", JDBCUtils.getTV(conn));
+        request.setAttribute("Phone", JDBCUtils.getPhone(conn));
+        request.setAttribute("Computer", JDBCUtils.getComputer(conn));
+        request.setAttribute("TV", JDBCUtils.getTV(conn));
         JDBCUtils.getConnectionPool().checkIn(conn);
 
 

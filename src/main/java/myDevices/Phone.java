@@ -15,8 +15,8 @@ public class Phone extends Devices {
         this.type = type;
     }
 
-    public Phone(String type, String name, String size, String color, int power, int batteryLifeTime, int state) {
-        super(name, size, color, power, state);
+    public Phone(String type, String name, String size, String color, int power, int batteryLifeTime) {
+        super(name, size, color, power);
         this.type = type;
         this.batteryLifeTime = batteryLifeTime;
     }

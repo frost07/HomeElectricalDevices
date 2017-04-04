@@ -72,6 +72,7 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int sizeHDD = rs.getInt("sizeHDD");
+                //int state = rs.getInt("state");
                 list.add(new Computer(type, name, size, color, power, sizeHDD));
             }
 
@@ -96,6 +97,7 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int numberOfChannels = rs.getInt("numberOfChannels");
+               // int state = rs.getInt("state");
                 list.add(new TV(type, name, size, color, power, numberOfChannels));
 
             }
@@ -121,6 +123,7 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int batteryLifeTime = rs.getInt("batteryLifeTime");
+                //int state = rs.getInt("state");
                 list.add(new Phone(type, name, size, color, power, batteryLifeTime));
 
             }

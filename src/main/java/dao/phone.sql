@@ -28,8 +28,7 @@ CREATE TABLE `phone` (
   `size` varchar(100) DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
   `power` int(100) DEFAULT NULL,
-  `batteryLifeTime` int(100) DEFAULT NULL,
-  `state` int(1) DEFAULT null
+  `batteryLifeTime` int(100) DEFAULT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +39,7 @@ CREATE TABLE `phone` (
 
 LOCK TABLES `phone` WRITE;
 /*!40000 ALTER TABLE `phone` DISABLE KEYS */;
-INSERT INTO `phone` VALUES ('Phone','xiaomi','big','black','3','155','0'),('Phone','iphone','small','green','2','256','0'),('Phone','samsung','big','silver','5','178','0');
+INSERT INTO `phone` VALUES ('Phone','xiaomi','big','black','3','155'),('Phone','iphone','small','green','2','256'),('Phone','samsung','big','silver','5','178');
 /*!40000 ALTER TABLE `phone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

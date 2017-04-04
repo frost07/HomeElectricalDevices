@@ -9,29 +9,20 @@ public abstract class Devices implements Electronics{
    private String name;
     private String size;
     private String color;
-    private int state;
+    private int power;
+    private boolean activated=false;
+    private String type;
 
-    public void setState(int state) {
-        this.state = state;
+    public Devices(String name, String size, String color, int power) {
+        this.name = name;
+        this.size = size;
+        this.color = color;
+        this.power = power;
     }
 
     public String getType() {
         return type;
     }
-
-    private int power;
-    private boolean activated=false;
-    private String type;
-
-    public Devices(String name, String size, String color, int power, int state) {
-        this.name = name;
-        this.size = size;
-        this.color = color;
-        this.power = power;
-        this.state = state;
-    }
-
-
 
     public void setName(String name) {
         this.name = name;
@@ -71,10 +62,6 @@ public abstract class Devices implements Electronics{
     @Override
     public void off() {
         activated=false;
-    }
-
-    public boolean getState(){
-        return activated;
     }
 
     public String toString(){

@@ -13,8 +13,8 @@ public class Computer extends Devices {
         this.type = type;
     }
 
-    public Computer(String type, String name, String size, String color, int power, int sizeHDD, int state) {
-        super(name, size, color, power, state);
+    public Computer(String type, String name, String size, String color, int power, int sizeHDD) {
+        super(name, size, color, power);
         this.type = type;
         this.sizeHDD = sizeHDD;
     }

@@ -4,17 +4,14 @@
 <head>
     <title>Devices</title>
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
-
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             $('#radioDiv').buttonset();
         });
     </script>
-
 </head>
 <body>
-
-<table id="employees" class="display" cellspacing="0" width="100%">
+<table id="devices" class="display" cellspacing="0" width="100%">
     <thead>
     <tr>
         <th>Type</th>
@@ -39,7 +36,7 @@
     </tfoot>
 
     <tbody>
-    <c:forEach items="${phone}" var="Phone">
+    <c:forEach items="${Phone}" var="Phone">
         <tr>
             <td>${Phone.type}</td>
             <td>${Phone.name}</td>
@@ -52,16 +49,15 @@
                     <div id="radioDiv">
                         <input type="radio" name="device" id="on"/>
                         <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked />
+                        <input type="radio" name="device" id="off" checked/>
                         <label for="off">OFF</label>
 
                     </div>
                 </form>
             </td>
-
         </tr>
     </c:forEach>
-    <c:forEach items="${computer}" var="Computer">
+    <c:forEach items="${Computer}" var="Computer">
         <tr>
             <td>${Computer.type}</td>
             <td>${Computer.name}</td>
@@ -74,7 +70,7 @@
                     <div id="radioDiv">
                         <input type="radio" name="device" id="on"/>
                         <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked />
+                        <input type="radio" name="device" id="off" checked/>
                         <label for="off">OFF</label>
 
                     </div>
@@ -82,7 +78,7 @@
             </td>
         </tr>
     </c:forEach>
-    <c:forEach items="${tv}" var="TV">
+    <c:forEach items="${TV}" var="TV">
         <tr>
             <td>${TV.type}</td>
             <td>${TV.name}</td>
@@ -95,7 +91,7 @@
                     <div id="radioDiv">
                         <input type="radio" name="device" id="on"/>
                         <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked />
+                        <input type="radio" name="device" id="off" checked/>
                         <label for="off">OFF</label>
 
                     </div>
