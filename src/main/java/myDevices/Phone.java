@@ -1,4 +1,4 @@
-package MyDevices;
+package myDevices;
 
 /**
  * Created by frost on 13.03.2017.
@@ -15,8 +15,8 @@ public class Phone extends Devices {
         this.type = type;
     }
 
-    public Phone(String type, String name, String size, String color, int power, int batteryLifeTime) {
-        super(name, size, color, power);
+    public Phone(String type, String name, String size, String color, int power, int batteryLifeTime, int state) {
+        super(name, size, color, power, state);
         this.type = type;
         this.batteryLifeTime = batteryLifeTime;
     }

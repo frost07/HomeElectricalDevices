@@ -4,6 +4,13 @@
 <head>
     <title>Devices</title>
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+
+    <script type="text/javascript">
+        $(function() {
+            $('#radioDiv').buttonset();
+        });
+    </script>
+
 </head>
 <body>
 
@@ -16,6 +23,7 @@
         <th>Color</th>
         <th>Power</th>
         <th>Feature</th>
+        <th>Button</th>
     </tr>
     </thead>
     <tfoot>
@@ -26,6 +34,7 @@
         <th>Color</th>
         <th>Power</th>
         <th>Feature</th>
+        <th>Button</th>
     </tr>
     </tfoot>
 
@@ -38,6 +47,18 @@
             <td>${Phone.color}</td>
             <td>${Phone.power}</td>
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
+            <td>
+                <form>
+                    <div id="radioDiv">
+                        <input type="radio" name="device" id="on"/>
+                        <label for="on">ON</label>
+                        <input type="radio" name="device" id="off" checked />
+                        <label for="off">OFF</label>
+
+                    </div>
+                </form>
+            </td>
+
         </tr>
     </c:forEach>
     <c:forEach items="${computer}" var="Computer">
@@ -48,6 +69,17 @@
             <td>${Computer.color}</td>
             <td>${Computer.power}</td>
             <td>Size HDD ${Computer.sizeHDD}</td>
+            <td>
+                <form>
+                    <div id="radioDiv">
+                        <input type="radio" name="device" id="on"/>
+                        <label for="on">ON</label>
+                        <input type="radio" name="device" id="off" checked />
+                        <label for="off">OFF</label>
+
+                    </div>
+                </form>
+            </td>
         </tr>
     </c:forEach>
     <c:forEach items="${tv}" var="TV">
@@ -58,6 +90,17 @@
             <td>${TV.color}</td>
             <td>${TV.power}</td>
             <td>Number Of Channels ${TV.numberOfChannels}</td>
+            <td>
+                <form>
+                    <div id="radioDiv">
+                        <input type="radio" name="device" id="on"/>
+                        <label for="on">ON</label>
+                        <input type="radio" name="device" id="off" checked />
+                        <label for="off">OFF</label>
+
+                    </div>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 

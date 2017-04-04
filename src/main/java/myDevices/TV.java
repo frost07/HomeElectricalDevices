@@ -1,4 +1,4 @@
-package MyDevices;
+package myDevices;
 
 /**
  * Created by frost on 13.03.2017.
@@ -13,8 +13,8 @@ private String type ="TV";
         this.type = type;
     }
 
-    public TV(String type, String name, String size, String color, int power, int numberOfChannels) {
-        super(name, size, color, power);
+    public TV(String type, String name, String size, String color, int power, int numberOfChannels, int state) {
+        super(name, size, color, power, state);
         this.type = type;
         this.numberOfChannels = numberOfChannels;
     }

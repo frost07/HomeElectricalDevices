@@ -1,6 +1,6 @@
-package MyDevices;
+package myDevices;
 
-import Interfaces.Electronics;
+import interfaces.Electronics;
 
 /**
  * Created by frost on 13.03.2017.
@@ -9,6 +9,11 @@ public abstract class Devices implements Electronics{
    private String name;
     private String size;
     private String color;
+    private int state;
+
+    public void setState(int state) {
+        this.state = state;
+    }
 
     public String getType() {
         return type;
@@ -18,11 +23,12 @@ public abstract class Devices implements Electronics{
     private boolean activated=false;
     private String type;
 
-    public Devices(String name, String size, String color, int power) {
+    public Devices(String name, String size, String color, int power, int state) {
         this.name = name;
         this.size = size;
         this.color = color;
         this.power = power;
+        this.state = state;
     }
 
 

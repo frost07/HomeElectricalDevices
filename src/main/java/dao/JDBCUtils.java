@@ -1,9 +1,9 @@
 package dao;
 
-import MyDevices.Computer;
-import MyDevices.Devices;
-import MyDevices.Phone;
-import MyDevices.TV;
+import myDevices.Computer;
+import myDevices.Devices;
+import myDevices.Phone;
+import myDevices.TV;
 
 import java.io.IOException;
 import java.io.InputStream;
