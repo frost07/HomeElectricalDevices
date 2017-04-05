@@ -22,7 +22,7 @@ public class Phone extends Devices {
     }
 
     public String toString() {
-        return super.toString() + " [Battery life time " + batteryLifeTime+"] ";
+        return type+super.toString() + " [Battery life time " + batteryLifeTime+"] ";
     }
 
     public int getBatteryLifeTime() {

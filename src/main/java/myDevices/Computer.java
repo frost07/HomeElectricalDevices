@@ -28,6 +28,6 @@ public class Computer extends Devices {
     }
 
     public String toString() {
-        return super.toString() + " [size HDD " + sizeHDD + "] ";
+        return type+super.toString() + " [size HDD " + sizeHDD + "] ";
     }
 }

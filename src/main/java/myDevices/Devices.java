@@ -75,7 +75,7 @@ public abstract class Devices implements Electronics{
     }
 
     public String toString(){
-        return type + " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
+        return " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
     }
 }
 

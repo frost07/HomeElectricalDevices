@@ -6,13 +6,19 @@
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
     <script type="text/javascript">
         $(function () {
-            $('#radioPhone').buttonset();
+            $('#radioPhone').buttonset(function() {
+             
+            });
         });
         $(function () {
-            $('#radioComputer').buttonset();
+            $('#radioComputer').buttonset(function () {
+                
+            });
         });
         $(function () {
-            $('#radioTV').buttonset();
+            $('#radioTV').buttonset(function () {
+                
+            });
         });
 
     </script>

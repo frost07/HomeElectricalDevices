@@ -21,8 +21,6 @@ public class EmployeesServlet extends HttpServlet {
         request.setAttribute("TV", JDBCUtils.getTV(conn));
         JDBCUtils.getConnectionPool().checkIn(conn);
 
-
-
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }
 
