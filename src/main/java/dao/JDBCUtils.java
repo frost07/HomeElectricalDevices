@@ -72,8 +72,8 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int sizeHDD = rs.getInt("sizeHDD");
-                //int state = rs.getInt("state");
-                list.add(new Computer(type, name, size, color, power, sizeHDD));
+                int state = rs.getInt("state");
+                list.add(new Computer(type, name, size, color, power, sizeHDD, state));
             }
 
         } catch (SQLException e) {
@@ -97,8 +97,8 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int numberOfChannels = rs.getInt("numberOfChannels");
-               // int state = rs.getInt("state");
-                list.add(new TV(type, name, size, color, power, numberOfChannels));
+                int state = rs.getInt("state");
+                list.add(new TV(type, name, size, color, power, numberOfChannels, state));
 
             }
 
@@ -123,8 +123,8 @@ public class JDBCUtils {
                 String color = rs.getString("color");
                 int power = rs.getInt("power");
                 int batteryLifeTime = rs.getInt("batteryLifeTime");
-                //int state = rs.getInt("state");
-                list.add(new Phone(type, name, size, color, power, batteryLifeTime));
+                int state = rs.getInt("state");
+                list.add(new Phone(type, name, size, color, power, batteryLifeTime, state));
 
             }
 
@@ -135,7 +135,7 @@ public class JDBCUtils {
     }
 
     public static void insertPhone(Connection conn, Phone employee) {
-        String sql = "INSERT INTO phone(type,name,size,color,power,batteryLifeTime) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO phone(type,name,size,color,power,batteryLifeTime,state) VALUES (?,?,?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {
@@ -146,6 +146,7 @@ public class JDBCUtils {
             pstm.setString(4, employee.getColor());
             pstm.setInt(5, employee.getPower());
             pstm.setInt(6, employee.getBatteryLifeTime());
+            pstm.setInt(7, employee.getState());
 
 
             pstm.executeUpdate();
@@ -156,7 +157,7 @@ public class JDBCUtils {
 
     }
     public static void insertComputer(Connection conn, Computer employee) {
-        String sql = "INSERT INTO computer(type,name,size,color,power,sizeHDD) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO computer(type,name,size,color,power,sizeHDD,state) VALUES (?,?,?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {
@@ -167,6 +168,7 @@ public class JDBCUtils {
             pstm.setString(4, employee.getColor());
             pstm.setInt(5, employee.getPower());
             pstm.setInt(6, employee.getSizeHDD());
+            pstm.setInt(7, employee.getState());
 
 
             pstm.executeUpdate();
@@ -177,7 +179,7 @@ public class JDBCUtils {
 
     }
     public static void insertTV(Connection conn, TV employee) {
-        String sql = "INSERT INTO tv(type,name,size,color,power,numberOfChannels) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO tv(type,name,size,color,power,numberOfChannels,state) VALUES (?,?,?,?,?,?,?)";
 
         PreparedStatement pstm = null;
         try {
@@ -188,6 +190,7 @@ public class JDBCUtils {
             pstm.setString(4, employee.getColor());
             pstm.setInt(5, employee.getPower());
             pstm.setInt(6, employee.getNumberOfChannels());
+            pstm.setInt(7, employee.getState());
 
 
             pstm.executeUpdate();

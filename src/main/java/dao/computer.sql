@@ -28,7 +28,8 @@ CREATE TABLE `computer` (
   `size` varchar(100) DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
   `power` int(100) DEFAULT NULL,
-  `sizeHDD` int(100) DEFAULT NULL
+  `sizeHDD` int(100) DEFAULT NULL,
+  `state` int(1) DEFAULT NULL
 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

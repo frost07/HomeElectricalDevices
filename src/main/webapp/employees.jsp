@@ -6,8 +6,15 @@
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
     <script type="text/javascript">
         $(function () {
-            $('#radioDiv').buttonset();
+            $('#radioPhone').buttonset();
         });
+        $(function () {
+            $('#radioComputer').buttonset();
+        });
+        $(function () {
+            $('#radioTV').buttonset();
+        });
+
     </script>
 </head>
 <body>
@@ -21,6 +28,7 @@
         <th>Power</th>
         <th>Feature</th>
         <th>Button</th>
+        <th>State</th>
     </tr>
     </thead>
     <tfoot>
@@ -32,6 +40,7 @@
         <th>Power</th>
         <th>Feature</th>
         <th>Button</th>
+        <th>State</th>
     </tr>
     </tfoot>
 
@@ -46,15 +55,15 @@
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
             <td>
                 <form>
-                    <div id="radioDiv">
-                        <input type="radio" name="device" id="on"/>
-                        <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked/>
-                        <label for="off">OFF</label>
-
+                    <div id="radioPhone">
+                        <input type="radio" name="device" id="onPhone"/>
+                        <label for="onPhone">ON</label>
+                        <input type="radio" name="device" id="offPhone" checked/>
+                        <label for="offPhone">OFF</label>
                     </div>
                 </form>
             </td>
+            <td>${Phone.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${Computer}" var="Computer">
@@ -67,15 +76,16 @@
             <td>Size HDD ${Computer.sizeHDD}</td>
             <td>
                 <form>
-                    <div id="radioDiv">
-                        <input type="radio" name="device" id="on"/>
-                        <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked/>
-                        <label for="off">OFF</label>
+                    <div id="radioComputer">
+                        <input type="radio" name="device" id="onComputer"/>
+                        <label for="onComputer">ON</label>
+                        <input type="radio" name="device" id="offComputer" checked/>
+                        <label for="offComputer">OFF</label>
 
                     </div>
                 </form>
             </td>
+            <td>${Computer.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${TV}" var="TV">
@@ -88,15 +98,16 @@
             <td>Number Of Channels ${TV.numberOfChannels}</td>
             <td>
                 <form>
-                    <div id="radioDiv">
-                        <input type="radio" name="device" id="on"/>
-                        <label for="on">ON</label>
-                        <input type="radio" name="device" id="off" checked/>
-                        <label for="off">OFF</label>
+                    <div id="radioTV">
+                        <input type="radio" name="device" id="onTV"/>
+                        <label for="onTV">ON</label>
+                        <input type="radio" name="device" id="offTV" checked/>
+                        <label for="offTV">OFF</label>
 
                     </div>
                 </form>
             </td>
+            <td>${TV.state}</td>
         </tr>
     </c:forEach>
 

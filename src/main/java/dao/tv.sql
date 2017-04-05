@@ -28,7 +28,8 @@ CREATE TABLE `tv` (
   `size` varchar(100) DEFAULT NULL,
   `color` varchar(100) DEFAULT NULL,
   `power` int(100) DEFAULT NULL,
-  `numberOfChannels` int(100) DEFAULT NULL
+  `numberOfChannels` int(100) DEFAULT NULL,
+  `state` int(1) DEFAULT NULL
 
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,7 +41,7 @@ CREATE TABLE `tv` (
 
 LOCK TABLES `tv` WRITE;
 /*!40000 ALTER TABLE `tv` DISABLE KEYS */;
-INSERT INTO `tv` VALUES ('TV','phillips','big','green','10','100'),('TV','samsung','middle','blue','8','100'),('TV','sony','small','silver','6','150');
+INSERT INTO `tv` VALUES ('TV','phillips','big','green','10','100','0'),('TV','samsung','middle','blue','8','100','0'),('TV','sony','small','silver','6','150','0');
 /*!40000 ALTER TABLE `tv` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

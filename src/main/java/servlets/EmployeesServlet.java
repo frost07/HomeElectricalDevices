@@ -16,11 +16,11 @@ public class EmployeesServlet extends HttpServlet {
             throws ServletException, IOException {
 
         Connection conn = JDBCUtils.getConnectionPool().checkOut();
-
         request.setAttribute("Phone", JDBCUtils.getPhone(conn));
         request.setAttribute("Computer", JDBCUtils.getComputer(conn));
         request.setAttribute("TV", JDBCUtils.getTV(conn));
         JDBCUtils.getConnectionPool().checkIn(conn);
+
 
 
         request.getRequestDispatcher("/employees.jsp").forward(request, response);

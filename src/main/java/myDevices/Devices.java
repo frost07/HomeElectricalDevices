@@ -12,12 +12,22 @@ public abstract class Devices implements Electronics{
     private int power;
     private boolean activated=false;
     private String type;
+    private int state;
 
-    public Devices(String name, String size, String color, int power) {
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public Devices(String name, String size, String color, int power, int state) {
         this.name = name;
         this.size = size;
         this.color = color;
         this.power = power;
+        this.state = state;
     }
 
     public String getType() {
