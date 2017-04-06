@@ -44,9 +44,9 @@
             <td>
                 <form>
                     <div id="radioPhone">
-                        <input type="radio" name="buttonPhone" id="onPhone"/>
+                        <input type="radio" name="buttonPhone" value="on" id="onPhone"/>
                         <label for="onPhone">ON</label>
-                        <input type="radio" name="buttonPhone" id="offPhone" checked/>
+                        <input type="radio" name="buttonPhone" value="off" id="offPhone" checked/>
                         <label for="offPhone">OFF</label>
                     </div>
                 </form>
