@@ -27,6 +27,9 @@ public class EmployeesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+       /* String buttonPhone = request.getParameter("buttonPhone");
+        System.out.println("Button is: " + buttonPhone);
+        request.getRequestDispatcher("/employees.jsp").forward(request, response);*/
         super.doPost(request, response);
     }
 }

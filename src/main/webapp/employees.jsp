@@ -4,24 +4,6 @@
 <head>
     <title>Devices</title>
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
-    <script type="text/javascript">
-        $(function () {
-            $('#radioPhone').buttonset(function() {
-             
-            });
-        });
-        $(function () {
-            $('#radioComputer').buttonset(function () {
-                
-            });
-        });
-        $(function () {
-            $('#radioTV').buttonset(function () {
-                
-            });
-        });
-
-    </script>
 </head>
 <body>
 <table id="devices" class="display" cellspacing="0" width="100%">
@@ -62,9 +44,9 @@
             <td>
                 <form>
                     <div id="radioPhone">
-                        <input type="radio" name="device" id="onPhone"/>
+                        <input type="radio" name="buttonPhone" id="onPhone"/>
                         <label for="onPhone">ON</label>
-                        <input type="radio" name="device" id="offPhone" checked/>
+                        <input type="radio" name="buttonPhone" id="offPhone" checked/>
                         <label for="offPhone">OFF</label>
                     </div>
                 </form>
@@ -83,9 +65,9 @@
             <td>
                 <form>
                     <div id="radioComputer">
-                        <input type="radio" name="device" id="onComputer"/>
+                        <input type="radio" name="buttonComputer" id="onComputer"/>
                         <label for="onComputer">ON</label>
-                        <input type="radio" name="device" id="offComputer" checked/>
+                        <input type="radio" name="buttonComputer" id="offComputer" checked/>
                         <label for="offComputer">OFF</label>
 
                     </div>
@@ -105,9 +87,9 @@
             <td>
                 <form>
                     <div id="radioTV">
-                        <input type="radio" name="device" id="onTV"/>
+                        <input type="radio" name="buttonTV" id="onTV"/>
                         <label for="onTV">ON</label>
-                        <input type="radio" name="device" id="offTV" checked/>
+                        <input type="radio" name="buttonTV" id="offTV" checked/>
                         <label for="offTV">OFF</label>
 
                     </div>
