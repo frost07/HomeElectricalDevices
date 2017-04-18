@@ -1,19 +1,21 @@
 package model.myDevices;
 
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Transient;
 
 /**
  * Created by frost on 13.03.2017.
  */
-@Entity
-public abstract class Devices implements Electronics {
+
+@MappedSuperclass
+public abstract class Devices {
    private String name;
     private String size;
     private String color;
     private int power;
-    private boolean activated=false;
+
     private String type;
     private int state;
 
@@ -32,7 +34,7 @@ public abstract class Devices implements Electronics {
         this.power = power;
         this.state = state;
     }
-
+    @Transient
     public String getType() {
         return type;
     }
@@ -65,16 +67,6 @@ public abstract class Devices implements Electronics {
 
     public int getPower() {
         return power;
-    }
-
-    @Override
-    public void on() {
-        activated=true;
-    }
-
-    @Override
-    public void off() {
-        activated=false;
     }
 
     public String toString(){
