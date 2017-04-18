@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `computer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `computer` (
+  `id` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `size` varchar(100) DEFAULT NULL,
@@ -41,7 +42,7 @@ CREATE TABLE `computer` (
 
 LOCK TABLES `computer` WRITE;
 /*!40000 ALTER TABLE `computer` DISABLE KEYS */;
-INSERT INTO `computer` VALUES ('Computer','dell','middle','pink','25','256','0'),('Computer','asus','midle','black','30','512','0'),('Computer','lenovo','small','black','12','512','0');
+INSERT INTO `computer` VALUES ('comp1','Computer','dell','middle','pink','25','256','0'),('comp2','Computer','asus','midle','black','30','512','0'),('comp3','Computer','lenovo','small','black','12','512','0');
 /*!40000 ALTER TABLE `computer` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

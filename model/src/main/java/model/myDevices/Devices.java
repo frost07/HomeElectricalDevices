@@ -75,7 +75,7 @@ public abstract class Devices {
 
     private String id;
 
-    @Id
+@Id
     public String getId() {
         return id;
     }

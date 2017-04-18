@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `phone`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `phone` (
+  `id` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `size` varchar(100) DEFAULT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE `phone` (
 
 LOCK TABLES `phone` WRITE;
 /*!40000 ALTER TABLE `phone` DISABLE KEYS */;
-INSERT INTO `phone` VALUES ('Phone','xiaomi','big','black','3','155','0'),('Phone','iphone','small','green','2','256','0'),('Phone','samsung','big','silver','5','178','0');
+INSERT INTO `phone` VALUES ('phone1','Phone','xiaomi','big','black','3','155','0'),('phone2','Phone','iphone','small','green','2','256','0'),('phone3','Phone','samsung','big','silver','5','178','0');
 /*!40000 ALTER TABLE `phone` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

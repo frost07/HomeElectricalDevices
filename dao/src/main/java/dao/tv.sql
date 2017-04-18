@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS `tv`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tv` (
+  `id` varchar(100) DEFAULT NULL,
   `type` varchar(100) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `size` varchar(100) DEFAULT NULL,
@@ -41,7 +42,7 @@ CREATE TABLE `tv` (
 
 LOCK TABLES `tv` WRITE;
 /*!40000 ALTER TABLE `tv` DISABLE KEYS */;
-INSERT INTO `tv` VALUES ('TV','phillips','big','green','10','100','0'),('TV','samsung','middle','blue','8','100','0'),('TV','sony','small','silver','6','150','0');
+INSERT INTO `tv` VALUES ('tv1','TV','phillips','big','green','10','100','0'),('tv2','TV','samsung','middle','blue','8','100','0'),('tv3','TV','sony','small','silver','6','150','0');
 /*!40000 ALTER TABLE `tv` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
