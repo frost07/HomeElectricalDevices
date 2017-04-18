@@ -1,15 +1,16 @@
 package model.myDevices;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by frost on 13.03.2017.
  */
+@Entity
+@Table(name = "phone", schema = "employees", catalog = "")
 public class Phone extends Devices {
     private int batteryLifeTime;
     private String type = "Phone";
-
-    public String getType() {
-        return type;
-    }
 
     public void setType(String type) {
         this.type = type;

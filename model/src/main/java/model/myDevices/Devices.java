@@ -1,9 +1,13 @@
 package model.myDevices;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * Created by frost on 13.03.2017.
  */
+@Entity
 public abstract class Devices implements Electronics {
    private String name;
     private String size;
@@ -75,6 +79,17 @@ public abstract class Devices implements Electronics {
 
     public String toString(){
         return " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
+    }
+
+    private String id;
+
+    @Id
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
 
