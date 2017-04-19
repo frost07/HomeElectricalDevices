@@ -27,24 +27,16 @@ public class EmployeesServlet extends HttpServlet {
 
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
 
-        CriteriaBuilder builderPhone = session.getCriteriaBuilder();
-        CriteriaQuery<Phone> queryPhone = builderPhone.createQuery(Phone.class);
+        CriteriaQuery<Phone> queryPhone = builder.createQuery(Phone.class);
         Root<Phone> phoneRoot = queryPhone.from(Phone.class);
         queryPhone.select(phoneRoot);
-        //session.getTransaction().commit();
-        //request.setAttribute("Phone", session.createQuery(queryPhone).getResultList());
-        //session.close();
 
-        CriteriaBuilder builderComputer = session.getCriteriaBuilder();
-        CriteriaQuery<Computer> queryComputer = builderComputer.createQuery(Computer.class);
+        CriteriaQuery<Computer> queryComputer = builder.createQuery(Computer.class);
         Root<Computer> computerRoot = queryComputer.from(Computer.class);
         queryComputer.select(computerRoot);
-        //session.getTransaction().commit();
-        //request.setAttribute("Computer", session.createQuery(queryComputer).getResultList());
-        //session.close();
 
-        CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<TV> queryTV = builder.createQuery(TV.class);
         Root<TV> tvRoot = queryTV.from(TV.class);
         queryTV.select(tvRoot);
