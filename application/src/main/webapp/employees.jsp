@@ -35,16 +35,17 @@
     <tbody>
     <c:forEach items="${Phone}" var="Phone">
         <tr>
-            <td>${Phone.type}</td>
-            <td>${Phone.name}</td>
-            <td>${Phone.size}</td>
-            <td>${Phone.color}</td>
-            <td>${Phone.power}</td>
+            <td data-name="type">${Phone.type}</td>
+            <td data-name="name">${Phone.name}</td>
+            <td data-name="size">${Phone.size}</td>
+            <td data-name="color">${Phone.color}</td>
+            <td data-name="power">${Phone.power}</td>
+            <%--<td data-name="batteryLifeTime">Battery Life Time ${Phone.batteryLifeTime}</td>--%>
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
             <td>
                 <button class="js-action-reset-salary" data-employee-key="${Phone.id}">Switch</button>
             </td>
-            <td>${Phone.state}</td>
+            <td data-name="state">${Phone.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${Computer}" var="Computer">
