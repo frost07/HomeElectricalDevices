@@ -3,7 +3,6 @@ package model.myDevices;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Transient;
 
 /**
  * Created by frost on 13.03.2017.
@@ -19,6 +18,10 @@ public abstract class Devices {
     private String type;
     private int state;
 
+    public Devices() {
+
+    }
+
     public int getState() {
         return state;
     }
@@ -27,21 +30,22 @@ public abstract class Devices {
         this.state = state;
     }
 
-    public Devices(String name, String size, String color, int power, int state) {
+    public Devices(String type, String name, String size, String color, int power, int state) {
+        this.type = type;
         this.name = name;
         this.size = size;
         this.color = color;
         this.power = power;
         this.state = state;
     }
-    @Transient
+
     public String getType() {
         return type;
     }
 
-//    public void setType(String type) {
-//        this.type = type;
-//    }
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -74,7 +78,7 @@ public abstract class Devices {
     }
 
     public String toString(){
-        return " [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
+        return " [type "+ type+"] [name "+ name+"] [size "+size+"] [color "+ color+"] [power "+power+"]";
     }
 
     private String id;

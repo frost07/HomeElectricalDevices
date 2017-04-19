@@ -6,7 +6,7 @@
     <link href="<c:url value="/resources/css/jquery.dataTables.min.css"/>" rel="stylesheet">
 </head>
 <body>
-<table id="employees" class="display" cellspacing="0" width="100%">
+<table id="devices" class="display" cellspacing="0" width="100%">
     <thead>
     <tr>
         <th>Type</th>

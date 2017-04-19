@@ -10,20 +10,20 @@ import javax.persistence.Table;
 @Table(name = "phone", schema = "employees", catalog = "")
 public class Phone extends Devices {
     private int batteryLifeTime;
-    private String type = "Phone";
+    //private String type = "Phone";
 
-//    public void setType(String type) {
-//        this.type = type;
-//    }
 
     public Phone(String type, String name, String size, String color, int power, int batteryLifeTime, int state) {
-        super(name, size, color, power, state);
-        this.type = type;
+        super(type,name, size, color, power, state);
+        //this.type = type;
         this.batteryLifeTime = batteryLifeTime;
     }
 
+    public Phone() {
+    }
+
     public String toString() {
-        return type+super.toString() + " [Battery life time " + batteryLifeTime+"] ";
+        return super.toString() + " [Battery life time " + batteryLifeTime+"] ";
     }
 
     public int getBatteryLifeTime() {

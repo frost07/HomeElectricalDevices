@@ -10,17 +10,15 @@ import javax.persistence.Table;
 @Table(name = "computer", schema = "employees", catalog = "")
 public class Computer extends Devices {
     private int sizeHDD;
-    private String type = "Computer";
-
-
-//    public void setType(String type) {
-//        this.type = type;
-//    }
+    //private String type = "Computer";
 
     public Computer(String type, String name, String size, String color, int power, int sizeHDD, int state) {
-        super(name, size, color, power, state);
-        this.type = type;
+        super(type, name, size, color, power, state);
+//        this.type = type;
         this.sizeHDD = sizeHDD;
+    }
+
+    public Computer() {
     }
 
     public int getSizeHDD() {
@@ -32,7 +30,7 @@ public class Computer extends Devices {
     }
 
     public String toString() {
-        return type + super.toString() + " [size HDD " + sizeHDD + "] ";
+        return super.toString() + " [size HDD " + sizeHDD + "] ";
     }
 
 }

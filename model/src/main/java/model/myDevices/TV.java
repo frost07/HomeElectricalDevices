@@ -10,16 +10,16 @@ import javax.persistence.Table;
 @Table(name = "tv", schema = "employees", catalog = "")
 public class TV extends Devices {
     private int numberOfChannels;
-    private String type = "TV";
+    //private String type = "TV";
 
-//    public void setType(String type) {
-//        this.type = type;
-//    }
 
     public TV(String type, String name, String size, String color, int power, int numberOfChannels, int state) {
-        super(name, size, color, power, state);
-        this.type = type;
+        super(type, name, size, color, power, state);
+        //this.type = type;
         this.numberOfChannels = numberOfChannels;
+    }
+
+    public TV() {
     }
 
     public int getNumberOfChannels() {
@@ -31,7 +31,7 @@ public class TV extends Devices {
     }
 
     public String toString() {
-        return type + super.toString() + " [number of channels " + numberOfChannels + "] ";
+        return super.toString() + " [number of channels " + numberOfChannels + "] ";
     }
 
 }

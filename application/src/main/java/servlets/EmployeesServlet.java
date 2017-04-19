@@ -55,15 +55,6 @@ public class EmployeesServlet extends HttpServlet {
         request.setAttribute("TV", session.createQuery(queryTV).getResultList());
         session.close();
 
-        //Connection conn = JDBCUtils.getConnectionPool().checkOut();
-//        request.setAttribute("Phone", JDBCUtils.getPhone(conn));
-//        request.setAttribute("Computer", JDBCUtils.getComputer(conn));
-//        request.setAttribute("TV", JDBCUtils.getTV(conn));
-//        JDBCUtils.getConnectionPool().checkIn(conn);
-
-       /* String buttonPhone = request.getParameter("buttonPhone");
-        System.out.println("Button is: " + buttonPhone);*/
-
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }
 
@@ -94,22 +85,6 @@ public class EmployeesServlet extends HttpServlet {
         session.getTransaction().commit();
         session.close();
 
-//        CriteriaUpdate criteriaUpdate = builder.createCriteriaUpdate(Employee.class);
-//        Root<Employee> root = criteriaUpdate.from(Employee.class);
-//        Predicate condition = builder.equal(root.get("name"),name);
-//        criteriaUpdate.where(condition);
-//        criteriaUpdate.set(root.get("salary"),"200");
-//
-//        int affected = session.createQuery(criteriaUpdate).executeUpdate();
-//        session.getTransaction().commit();
-//        session.close();
-//        if (affected > 0) {
-//            response.getWriter().append("200");
-//        } else {
-//            response.sendError(500);
-//        }
-
         response.getWriter().close();
-// super.doPost(request, response);
     }
 }
