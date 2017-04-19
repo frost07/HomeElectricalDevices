@@ -53,20 +53,26 @@ public class EmployeesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String name = request.getParameter("key");
+        String id = request.getParameter("key");
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<Phone> query = builder.createQuery(Phone.class);
         Root<Phone> phoneRoot = query.from(Phone.class);
-        Predicate condition = builder.equal(phoneRoot.get("name"), name);
+        Predicate condition = builder.equal(phoneRoot.get("id"), id);
         query.select(phoneRoot).where(condition);
         List<Phone> requiredPhone = session.createQuery(query).getResultList();
 
 
         if (requiredPhone != null && requiredPhone.size() > 0) {
             Phone phone = requiredPhone.get(0);
-            phone.setState(1);
+            int state =phone.getState();
+            if (state==0) {
+                phone.setState(1);
+            }
+            if (state == 1) {
+                phone.setState(0);
+            }
             session.save(phone);
 
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();

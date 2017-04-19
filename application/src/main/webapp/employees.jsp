@@ -42,7 +42,7 @@
             <td>${Phone.power}</td>
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
             <td>
-                <button class="js-action-reset-salary" data-employee-key="${employee.state}">ON</button>
+                <button class="js-action-reset-salary" data-employee-key="${Phone.id}">Switch</button>
             </td>
             <td>${Phone.state}</td>
         </tr>
