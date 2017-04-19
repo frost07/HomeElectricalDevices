@@ -12,9 +12,9 @@ public class TV extends Devices {
     private int numberOfChannels;
     private String type = "TV";
 
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public TV(String type, String name, String size, String color, int power, int numberOfChannels, int state) {
         super(name, size, color, power, state);

@@ -12,9 +12,9 @@ public class Phone extends Devices {
     private int batteryLifeTime;
     private String type = "Phone";
 
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public Phone(String type, String name, String size, String color, int power, int batteryLifeTime, int state) {
         super(name, size, color, power, state);

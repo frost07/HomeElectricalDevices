@@ -13,9 +13,9 @@ public class Computer extends Devices {
     private String type = "Computer";
 
 
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     public Computer(String type, String name, String size, String color, int power, int sizeHDD, int state) {
         super(name, size, color, power, state);
