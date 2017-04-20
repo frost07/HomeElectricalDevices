@@ -97,6 +97,5 @@ public class Button {
 
         session.getTransaction().commit();
         session.close();
-
         response.getWriter().close();
 }}

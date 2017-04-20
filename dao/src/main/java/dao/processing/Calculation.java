@@ -78,7 +78,6 @@ public class Calculation {
             ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
             String json = ow.writeValueAsString(totalPower);
             response.getWriter().append(json);
-
         }
 
         session.getTransaction().commit();

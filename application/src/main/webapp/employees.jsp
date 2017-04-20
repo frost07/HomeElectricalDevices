@@ -79,7 +79,7 @@
     <tr>
         <td><button class="js-action-reset-salary" data-employee-key="${Result.id}">General power
         </button></td>
-        <td data-name="result">${Result.value}</td>
+        <td data-name="value">${Result.value}</td>
     </tr>
     </c:forEach>
     </tbody>
