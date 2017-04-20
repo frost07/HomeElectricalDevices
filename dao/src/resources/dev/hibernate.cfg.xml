@@ -22,5 +22,6 @@
         <mapping class="model.myDevices.Computer"/>
         <mapping class="model.myDevices.Phone"/>
         <mapping class="model.myDevices.TV"/>
+        <mapping class="model.myDevices.TotalPower"/>
     </session-factory>
 </hibernate-configuration>

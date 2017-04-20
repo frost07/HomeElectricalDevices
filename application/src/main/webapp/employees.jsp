@@ -40,7 +40,6 @@
             <td data-name="size">${Phone.size}</td>
             <td data-name="color">${Phone.color}</td>
             <td data-name="power">${Phone.power}</td>
-            <%--<td data-name="batteryLifeTime">Battery Life Time ${Phone.batteryLifeTime}</td>--%>
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
             <td>
                 <button class="js-action-reset-salary" data-employee-key="${Phone.id}">Switch</button>
@@ -57,17 +56,9 @@
             <td>${Computer.power}</td>
             <td>Size HDD ${Computer.sizeHDD}</td>
             <td>
-                <form>
-                    <div id="radioComputer">
-                        <input type="radio" name="buttonComputer" id="onComputer"/>
-                        <label for="onComputer">ON</label>
-                        <input type="radio" name="buttonComputer" id="offComputer" checked/>
-                        <label for="offComputer">OFF</label>
-
-                    </div>
-                </form>
+                <button class="js-action-reset-salary" data-employee-key="${Computer.id}">Switch</button>
             </td>
-            <td>${Computer.state}</td>
+            <td data-name="state">${Computer.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${TV}" var="TV">
@@ -79,23 +70,20 @@
             <td>${TV.power}</td>
             <td>Number Of Channels ${TV.numberOfChannels}</td>
             <td>
-                <form>
-                    <div id="radioTV">
-                        <input type="radio" name="buttonTV" id="onTV"/>
-                        <label for="onTV">ON</label>
-                        <input type="radio" name="buttonTV" id="offTV" checked/>
-                        <label for="offTV">OFF</label>
-
-                    </div>
-                </form>
+                <button class="js-action-reset-salary" data-employee-key="${TV.id}">Switch</button>
             </td>
-            <td>${TV.state}</td>
+            <td data-name="state">${TV.state}</td>
         </tr>
     </c:forEach>
-
+    <c:forEach items="${Result}" var="Result">
+    <tr>
+        <td><button class="js-action-reset-salary" data-employee-key="${Result.id}">General power
+        </button></td>
+        <td data-name="result">${Result.value}</td>
+    </tr>
+    </c:forEach>
     </tbody>
 </table>
-
 
 <a>Made by Alexandr Domenikan</a>
 <script src="<c:url value="/resources/js/lib/jquery-1.12.4.js"/>"></script>

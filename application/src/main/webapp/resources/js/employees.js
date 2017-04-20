@@ -1,9 +1,4 @@
-
-// $(document).ready(function() {
-//     $('#devices').DataTable();
-// } );
 $(document).ready(function () {
-
 
     $('.js-action-reset-salary').on('click', function () {
         var self = $(this);
