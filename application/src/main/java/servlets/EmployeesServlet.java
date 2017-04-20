@@ -42,7 +42,6 @@ public class EmployeesServlet extends HttpServlet {
         CriteriaQuery<TotalPower> queryTotalPower = builder.createQuery(TotalPower.class);
         Root<TotalPower> TotalPowerRoot = queryTotalPower.from(TotalPower.class);
         queryTotalPower.select(TotalPowerRoot);
-        //session.createQuery(queryTotalPower).getResultList();
 
         session.getTransaction().commit();
         request.setAttribute("Phone", session.createQuery(queryPhone).getResultList());
