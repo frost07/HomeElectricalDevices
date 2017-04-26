@@ -1,13 +1,21 @@
 package dao.processing;
 
-import dao.JDBCUtils;
-import model.myDevices.Devices;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import dao.HibernateSessionFactory;
+import model.myDevices.Computer;
+import model.myDevices.Phone;
+import model.myDevices.TV;
+import org.hibernate.Session;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 
 /**
@@ -15,45 +23,56 @@ import java.util.Scanner;
  */
 public class Search {
 
-    public static void mySearch() throws IOException {
-        System.out.println();
-        System.out.println("введите пределы поиска");
-        System.out.println("min =");
-        int min = (new Scanner(System.in)).nextInt();
-        System.out.println("max =");
-        int max = (new Scanner(System.in)).nextInt();
-        System.out.println();
-        System.out.println("Найденные приборы");
+    public static void mySearch(int min, int max, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        session.beginTransaction();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
 
-        Connection conn = JDBCUtils.getConnectionPool().checkOut();
+        CriteriaQuery<Phone> queryPhone = builder.createQuery(Phone.class);
+        Root<Phone> phoneRoot = queryPhone.from(Phone.class);
+        queryPhone.select(phoneRoot);
 
-        List<Devices> list = new ArrayList<>();
+        CriteriaQuery<Computer> queryComputer = builder.createQuery(Computer.class);
+        Root<Computer> computerRoot = queryComputer.from(Computer.class);
+        queryComputer.select(computerRoot);
 
-        for (Devices i : JDBCUtils.getPhone(conn)) {
+        CriteriaQuery<TV> queryTV = builder.createQuery(TV.class);
+        Root<TV> tvRoot = queryTV.from(TV.class);
+        queryTV.select(tvRoot);
+
+        List<Phone> listPhone = new ArrayList<>();
+        List<Computer> listComputer = new ArrayList<>();
+        List<TV> listTV = new ArrayList<>();
+
+        for (Phone i : session.createQuery(queryPhone).getResultList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
-                //System.out.println(i.toString());
-                list.add(i);
-                //WriteFileTXT.write("Search_Result.txt",i.toString());
+                listPhone.add(i);
             }
         }
-        for (Devices i : JDBCUtils.getComputer(conn)) {
+        for (Computer i : session.createQuery(queryComputer).getResultList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
-                //System.out.println(i.toString());
-                list.add(i);
-                //WriteFileTXT.write("Search_Result.txt",i.toString());
+                listComputer.add(i);
             }
         }
-        for (Devices i : JDBCUtils.getTV(conn)) {
+        for (TV i : session.createQuery(queryTV).getResultList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
-               // System.out.println(i.toString());
-                list.add(i);
-                //WriteFileTXT.write("Search_Result.txt",i.toString());
+                listTV.add(i);
             }
         }
-        for (Devices i : list) {
+        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+        String jsonPhone = ow.writeValueAsString(listPhone);
+        String jsonComputer = ow.writeValueAsString(listComputer);
+        String jsonTV = ow.writeValueAsString(listTV);
+        response.getWriter().append(jsonPhone);
+        response.getWriter().append(jsonComputer);
+        response.getWriter().append(jsonTV);
 
-                System.out.println(i.toString());
-        }
+        session.close();
+        response.getWriter().close();
+
+        request.setAttribute("Phone", jsonPhone);
+        request.setAttribute("Computer", jsonComputer);
+        request.setAttribute("TV", jsonTV);
 
     }
 }

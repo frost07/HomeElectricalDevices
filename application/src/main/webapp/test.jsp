@@ -15,7 +15,6 @@
         <th>Color</th>
         <th>Power</th>
         <th>Feature</th>
-        <th>Button</th>
         <th>State</th>
     </tr>
     </thead>
@@ -27,7 +26,6 @@
         <th>Color</th>
         <th>Power</th>
         <th>Feature</th>
-        <th>Button</th>
         <th>State</th>
     </tr>
     </tfoot>
@@ -41,10 +39,7 @@
             <td data-name="color">${Phone.color}</td>
             <td data-name="power">${Phone.power}</td>
             <td>Battery Life Time ${Phone.batteryLifeTime}</td>
-            <td>
-                <button class="js-action-reset-salary" data-employee-key="${Phone.id}">Switch</button>
-            </td>
-            <td data-name="state">${Phone.state}</td>
+            <td>${Phone.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${Computer}" var="Computer">
@@ -55,10 +50,7 @@
             <td>${Computer.color}</td>
             <td>${Computer.power}</td>
             <td>Size HDD ${Computer.sizeHDD}</td>
-            <td>
-                <button class="js-action-reset-salary" data-employee-key="${Computer.id}">Switch</button>
-            </td>
-            <td data-name="state">${Computer.state}</td>
+            <td>${Computer.state}</td>
         </tr>
     </c:forEach>
     <c:forEach items="${TV}" var="TV">
@@ -69,43 +61,10 @@
             <td>${TV.color}</td>
             <td>${TV.power}</td>
             <td>Number Of Channels ${TV.numberOfChannels}</td>
-            <td>
-                <button class="js-action-reset-salary" data-employee-key="${TV.id}">Switch</button>
-            </td>
-            <td data-name="state">${TV.state}</td>
+            <td>${TV.state}</td>
         </tr>
     </c:forEach>
     </tbody>
-    <c:forEach items="${Result}" var="Result">
-        <tr>
-            <td>
-                <button class="js-action-reset-salary" data-employee-key="${Result.id}">General power
-                </button>
-            </td>
-            <td data-name="value">${Result.value}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </c:forEach>
-    <c:forEach items="${Result}" var="Result">
-        <tr>
-            <td><input type="text" id="min" placeholder="min"></td>
-            <td><input type="text" id="max" placeholder="max"></td>
-            <td>
-                <button class="resultSearch">Search
-                </button>
-            </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </c:forEach>
 </table>
 
 <a>Made by Alexandr Domenikan</a>

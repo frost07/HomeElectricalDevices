@@ -37,11 +37,13 @@ public class Calculation {
         Root<TV> tvRoot = queryTV.from(TV.class);
         queryTV.select(tvRoot);
 
+
         session.getTransaction().commit();
 
-        int summPhone = 0;
+       int summPhone = 0;
         int summTV = 0;
         int summComputer = 0;
+
         for (Devices i : session.createQuery(queryPhone).getResultList()) {
             if (i.getState() == 1) {
                 summPhone += i.getPower();
@@ -59,7 +61,8 @@ public class Calculation {
         }
         int summ = summPhone + summComputer + summTV;
 
-        String id = request.getParameter("key");
+        //String id = request.getParameter("key");
+        String id ="1";
         session.beginTransaction();
         CriteriaBuilder builderResult = session.getCriteriaBuilder();
 
@@ -84,4 +87,9 @@ public class Calculation {
         session.close();
         response.getWriter().close();
     }
+//    public static CriteriaQuery<x> myclass(CriteriaBuilder builder, x<T>){
+//        CriteriaQuery<x> query = builder.createQuery(x.class);
+//        Root<x> Root = query.from(x.class);
+//        return query.select(Root);
+    //}
 }

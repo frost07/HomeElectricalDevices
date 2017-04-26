@@ -44,6 +44,8 @@ public class EmployeesServlet extends HttpServlet {
         queryTotalPower.select(TotalPowerRoot);
 
         session.getTransaction().commit();
+
+
         request.setAttribute("Phone", session.createQuery(queryPhone).getResultList());
         request.setAttribute("Computer", session.createQuery(queryComputer).getResultList());
         request.setAttribute("TV", session.createQuery(queryTV).getResultList());
@@ -58,6 +60,10 @@ public class EmployeesServlet extends HttpServlet {
 
         Button.action(request,response);
         Calculation.usedPower(request,response);
+
+//        int min = Integer.parseInt(request.getParameter("min"));
+//        int max = Integer.parseInt(request.getParameter("max"));
+//        Search.mySearch(min,max,request,response);
 
 
     }
