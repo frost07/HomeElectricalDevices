@@ -40,21 +40,18 @@ $(document).ready(function () {
     $('.resultSearch').on('click', function () {
         var minValue = document.getElementById("min").value;
         var maxValue = document.getElementById("max").value;
-        $.ajax(location.href, {
+        var loc=location.href;
+        $.ajax("http://localhost:8080/test", {
 
             method: 'get',
             data: {min: minValue, max: maxValue},
-            // success: function (result) {
-            //
-            //                 var newData = $.parseJSON(result);
-            //                 Object.keys(newData).forEach(function (key) {
-            //                     var value = newData[key];
-            //                     // jquery selectors
-            //                     self.closest('tr').children('td[data-name=' + key + ']').text(value);
-            //                 });
-            //             }
-                    });
-                });
+            success: function (result) {
+                    document.location.replace("http://localhost:8080/test");
+            },
+
+
+        });
+    });
 
     $('#employees').DataTable();
 });

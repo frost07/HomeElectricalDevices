@@ -2,6 +2,7 @@ package servlets;
 
 import dao.HibernateSessionFactory;
 import dao.processing.Calculation;
+import dao.processing.Search;
 import model.myDevices.Computer;
 import model.myDevices.Phone;
 import model.myDevices.TV;
@@ -61,9 +62,9 @@ public class EmployeesServlet extends HttpServlet {
         Button.action(request,response);
         Calculation.usedPower(request,response);
 
-//        int min = Integer.parseInt(request.getParameter("min"));
-//        int max = Integer.parseInt(request.getParameter("max"));
-//        Search.mySearch(min,max,request,response);
+        int min = Integer.parseInt(request.getParameter("min"));
+        int max = Integer.parseInt(request.getParameter("max"));
+        Search.mySearch(min,max,request,response);
 
 
     }
