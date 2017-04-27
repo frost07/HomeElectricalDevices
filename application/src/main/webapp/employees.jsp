@@ -91,7 +91,6 @@
             <td></td>
         </tr>
     </c:forEach>
-    <c:forEach items="${Result}" var="Result">
         <tr>
             <td><input type="text" id="min" placeholder="min"></td>
             <td><input type="text" id="max" placeholder="max"></td>
@@ -105,7 +104,6 @@
             <td></td>
             <td></td>
         </tr>
-    </c:forEach>
 </table>
 
 <a>Made by Alexandr Domenikan</a>

@@ -65,6 +65,18 @@
         </tr>
     </c:forEach>
     </tbody>
+        <tr>
+            <td>Back to home page</td>
+            <td>
+                <button class="return">Return</button>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+        </tr>
 </table>
 
 <a>Made by Alexandr Domenikan</a>

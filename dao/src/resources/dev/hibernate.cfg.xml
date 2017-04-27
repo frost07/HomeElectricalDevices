@@ -23,5 +23,6 @@
         <mapping class="model.myDevices.Phone"/>
         <mapping class="model.myDevices.TV"/>
         <mapping class="model.myDevices.TotalPower"/>
+        <mapping class="model.myDevices.MinMax"/>
     </session-factory>
 </hibernate-configuration>

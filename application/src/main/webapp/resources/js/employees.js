@@ -18,39 +18,24 @@ $(document).ready(function () {
             }
         });
     });
-    // $('.resultSearch').on('click', function () {
-    //     var self = $(this);
-    //     var minValue = document.getElementById("min").value;
-    //     var maxValue = document.getElementById("max").value;
-    //     $.ajax(location.href, {
-    //         method: 'post',
-    //         data: {min: minValue, max: maxValue},
-    //         success: function (result) {
-    //             //var newData = JSON.parse(result);
-    //             var newData = $.parseJSON(result);
-    //             Object.keys(newData).forEach(function (key) {
-    //                 var value = newData[key];
-    //                 // jquery selectors
-    //                 self.closest('tr').children('td[data-name=' + key + ']').text(value);
-    //             });
-    //         }
-    //     });
-    // });
 
     $('.resultSearch').on('click', function () {
         var minValue = document.getElementById("min").value;
         var maxValue = document.getElementById("max").value;
-        var loc=location.href;
-        $.ajax("http://localhost:8080/test", {
+       // var loc=location.href;
+        $.ajax(location.href, {
 
-            method: 'get',
+            method: 'post',
             data: {min: minValue, max: maxValue},
-            success: function (result) {
-                    document.location.replace("http://localhost:8080/test");
+            success: function () {
+                   // document.location.replace("http://localhost:8080/test");
+                document.location.href = "http://localhost:8080/test";
             },
-
-
         });
+    });
+
+    $('.return').on('click', function () {
+                document.location.href = "http://localhost:8080/employees";
     });
 
     $('#employees').DataTable();
