@@ -41,8 +41,8 @@ public class Calculation {
         session.getTransaction().commit();
 
        int summPhone = 0;
-        int summTV = 0;
-        int summComputer = 0;
+       int summTV = 0;
+       int summComputer = 0;
 
         for (Devices i : session.createQuery(queryPhone).getResultList()) {
             if (i.getState() == 1) {

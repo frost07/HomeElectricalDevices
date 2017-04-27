@@ -62,8 +62,6 @@ public class EmployeesServlet extends HttpServlet {
         Button.action(request,response);
         Calculation.usedPower(request,response);
 
-
-
         //Search.mySearch(min,max,request,response);
 
         int min = Integer.parseInt(request.getParameter("min"));
@@ -89,7 +87,7 @@ public class EmployeesServlet extends HttpServlet {
             minmax.setMax(max);
 
             session.save(minmax);
-//
+
 //            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //            String json = ow.writeValueAsString(minmax);
 //            response.getWriter().append(json);
