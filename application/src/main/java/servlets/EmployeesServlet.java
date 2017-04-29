@@ -59,40 +59,43 @@ public class EmployeesServlet extends HttpServlet {
             throws ServletException, IOException {
 
 
-        Button.action(request,response);
-        Calculation.usedPower(request,response);
+        Button.action(request.getParameter("key"),response);
+        Calculation.usedPower(response);
 
-        int min = Integer.parseInt(request.getParameter("min"));
-        int max = Integer.parseInt(request.getParameter("max"));
+if(request.getParameter("min")==null || request.getParameter("max")==null) {
+    int min = Integer.parseInt(request.getParameter("min"));
+    int max = Integer.parseInt(request.getParameter("max"));
 
-       // String id = request.getParameter("key");
-        String id = "1";
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        session.beginTransaction();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
+    // String id = request.getParameter("key");
+    String id = "1";
+    Session session = HibernateSessionFactory.getSessionFactory().openSession();
+    session.beginTransaction();
+    CriteriaBuilder builder = session.getCriteriaBuilder();
 
 
-        CriteriaQuery<MinMax> query = builder.createQuery(MinMax.class);
-        Root<MinMax> Root = query.from(MinMax.class);
-        Predicate condition = builder.equal(Root.get("id"), id);
-        query.select(Root).where(condition);
-        List<MinMax> required = session.createQuery(query).getResultList();
+    CriteriaQuery<MinMax> query = builder.createQuery(MinMax.class);
+    Root<MinMax> Root = query.from(MinMax.class);
+    Predicate condition = builder.equal(Root.get("id"), id);
+    query.select(Root).where(condition);
+    List<MinMax> required = session.createQuery(query).getResultList();
 
-        if (required != null && required.size() > 0) {
-            MinMax minmax = required.get(0);
+    if (required != null && required.size() > 0) {
+        MinMax minmax = required.get(0);
 
-            minmax.setMin(min);
-            minmax.setMax(max);
+        minmax.setMin(min);
+        minmax.setMax(max);
 
-            session.save(minmax);
+        session.save(minmax);
 
 //            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //            String json = ow.writeValueAsString(minmax);
 //            response.getWriter().append(json);
-        }
-        session.getTransaction().commit();
-        session.close();
-        response.getWriter().close();
+    }
+    session.getTransaction().commit();
+    session.close();
+    response.getWriter().close();
+}
+
 
     }
 }

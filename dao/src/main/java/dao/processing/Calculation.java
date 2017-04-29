@@ -10,7 +10,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
@@ -19,7 +18,7 @@ import java.util.List;
  * Created by frost on 13.03.2017.
  */
 public class Calculation {
-    public static void usedPower(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public static void usedPower(HttpServletResponse response) throws IOException {
 
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();

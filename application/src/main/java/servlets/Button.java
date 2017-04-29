@@ -13,7 +13,6 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
@@ -22,8 +21,8 @@ import java.util.List;
  * Created by frost on 19.04.2017.
  */
 public class Button {
-    public static void action(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("key");
+    public static void action(String id, HttpServletResponse response) throws ServletException, IOException {
+
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         session.beginTransaction();
         CriteriaBuilder builder = session.getCriteriaBuilder();
