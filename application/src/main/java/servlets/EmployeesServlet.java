@@ -62,8 +62,6 @@ public class EmployeesServlet extends HttpServlet {
         Button.action(request,response);
         Calculation.usedPower(request,response);
 
-        //Search.mySearch(min,max,request,response);
-
         int min = Integer.parseInt(request.getParameter("min"));
         int max = Integer.parseInt(request.getParameter("max"));
 
