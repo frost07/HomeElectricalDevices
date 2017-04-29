@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>home_devices</artifactId>
-    <name>hibernate-${artifactId}-${version}</name>
+    <!--<name>hibernate-${artifactId}-${version}</name>-->
     <packaging>war</packaging>
 
     <parent>
