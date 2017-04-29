@@ -29,13 +29,13 @@ $(document).ready(function () {
             data: {min: minValue, max: maxValue},
             success: function () {
                    // document.location.replace("http://localhost:8080/test");
-                document.location.href = "http://localhost:8080/test";
+                document.location.href = "../test";
             },
         });
     });
 
     $('.return').on('click', function () {
-                document.location.href = "http://localhost:8080/employees";
+                document.location.href = "../employees";
     });
 
     $('#employees').DataTable();

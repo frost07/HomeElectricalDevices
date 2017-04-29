@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/home_devices/employees", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/employees", loadOnStartup = 1)
 public class EmployeesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
