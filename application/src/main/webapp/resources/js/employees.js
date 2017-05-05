@@ -28,8 +28,14 @@ $(document).ready(function () {
         $.ajax(location.href, {
             method: 'post',
             data: {key: keyValue, type: type},
-            success: function () {
-                document.location.replace("../employees");
+            success: function (result) {
+                //document.location.replace("../employees");
+                var newData = $.parseJSON(result);
+                Object.keys(newData).forEach(function (key) {
+                    var value = newData[key];
+                    // jquery selectors
+                    self.closest('tr').children('td[data-name=' + key + ']').text(value);
+                });
             }
         });
     });
