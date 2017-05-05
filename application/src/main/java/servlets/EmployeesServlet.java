@@ -2,6 +2,7 @@ package servlets;
 
 import dao.HibernateSessionFactory;
 import dao.processing.Calculation;
+import dao.processing.Comands;
 import model.myDevices.*;
 import org.hibernate.Session;
 
@@ -22,79 +23,59 @@ public class EmployeesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        session.beginTransaction();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-
-        CriteriaQuery<Phone> queryPhone = builder.createQuery(Phone.class);
-        Root<Phone> phoneRoot = queryPhone.from(Phone.class);
-        queryPhone.select(phoneRoot);
-
-        CriteriaQuery<Computer> queryComputer = builder.createQuery(Computer.class);
-        Root<Computer> computerRoot = queryComputer.from(Computer.class);
-        queryComputer.select(computerRoot);
-
-        CriteriaQuery<TV> queryTV = builder.createQuery(TV.class);
-        Root<TV> tvRoot = queryTV.from(TV.class);
-        queryTV.select(tvRoot);
-
-        CriteriaQuery<TotalPower> queryTotalPower = builder.createQuery(TotalPower.class);
-        Root<TotalPower> TotalPowerRoot = queryTotalPower.from(TotalPower.class);
-        queryTotalPower.select(TotalPowerRoot);
-
-        session.getTransaction().commit();
-
-        List list = session.createQuery(queryPhone).getResultList();
-
-        request.setAttribute("Phone", list);
-        request.setAttribute("Computer", session.createQuery(queryComputer).getResultList());
-        request.setAttribute("TV", session.createQuery(queryTV).getResultList());
-        request.setAttribute("Result", session.createQuery(queryTotalPower).getResultList());
-        session.close();
+        request.setAttribute("Phone", Comands.phoneList());
+        request.setAttribute("Computer", Comands.computerList());
+        request.setAttribute("TV", Comands.tvList());
+        request.setAttribute("Result", Comands.totalPowerList());
 
         request.getRequestDispatcher("/employees.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String x = request.getParameter("type");
+
+        if (x.equals("button")) {
+            Button.action(request.getParameter("key"), response);
+        }
+        if (x.equals("resultPower")) {
+            Calculation.usedPower(response);
+        }
+        if (x.equals("resultSearch")) {
+            if (request.getParameter("min") != null || request.getParameter("max") != null) {
+                int min = Integer.parseInt(request.getParameter("min"));
+                int max = Integer.parseInt(request.getParameter("max"));
+
+                // String id = request.getParameter("key");
+                String id = "1";
+                Session session = HibernateSessionFactory.getSessionFactory().openSession();
+                session.beginTransaction();
+                CriteriaBuilder builder = session.getCriteriaBuilder();
 
 
-        Button.action(request.getParameter("key"),response);
-        Calculation.usedPower(response);
+                CriteriaQuery<MinMax> query = builder.createQuery(MinMax.class);
+                Root<MinMax> Root = query.from(MinMax.class);
+                Predicate condition = builder.equal(Root.get("id"), id);
+                query.select(Root).where(condition);
+                List<MinMax> required = session.createQuery(query).getResultList();
 
-if(request.getParameter("min")==null || request.getParameter("max")==null) {
-    int min = Integer.parseInt(request.getParameter("min"));
-    int max = Integer.parseInt(request.getParameter("max"));
+                if (required != null && required.size() > 0) {
+                    MinMax minmax = required.get(0);
 
-    // String id = request.getParameter("key");
-    String id = "1";
-    Session session = HibernateSessionFactory.getSessionFactory().openSession();
-    session.beginTransaction();
-    CriteriaBuilder builder = session.getCriteriaBuilder();
+                    minmax.setMin(min);
+                    minmax.setMax(max);
 
-
-    CriteriaQuery<MinMax> query = builder.createQuery(MinMax.class);
-    Root<MinMax> Root = query.from(MinMax.class);
-    Predicate condition = builder.equal(Root.get("id"), id);
-    query.select(Root).where(condition);
-    List<MinMax> required = session.createQuery(query).getResultList();
-
-    if (required != null && required.size() > 0) {
-        MinMax minmax = required.get(0);
-
-        minmax.setMin(min);
-        minmax.setMax(max);
-
-        session.save(minmax);
+                    session.save(minmax);
 
 //            ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //            String json = ow.writeValueAsString(minmax);
 //            response.getWriter().append(json);
-    }
-    session.getTransaction().commit();
-    session.close();
-    response.getWriter().close();
-}
+                }
+                session.getTransaction().commit();
+                session.close();
+                //response.getWriter().close();
+            }
+        }
 
 
     }

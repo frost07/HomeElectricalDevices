@@ -79,10 +79,10 @@
     <c:forEach items="${Result}" var="Result">
         <tr>
             <td>
-                <button class="js-action-reset-salary" data-employee-key="${Result.id}">General power
+                <button class="resultPower" data-employee-key="${Result.id}">General power
                 </button>
             </td>
-            <td data-name="value">${Result.value}</td>
+            <td data-name="id">${Result.value}</td>
             <td></td>
             <td></td>
             <td></td>

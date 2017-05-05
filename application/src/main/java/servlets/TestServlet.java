@@ -1,6 +1,7 @@
 package servlets;
 
 import dao.HibernateSessionFactory;
+import dao.processing.Comands;
 import model.myDevices.Computer;
 import model.myDevices.MinMax;
 import model.myDevices.Phone;
@@ -29,18 +30,6 @@ public class TestServlet extends HttpServlet {
         session.beginTransaction();
         CriteriaBuilder builder = session.getCriteriaBuilder();
 
-        CriteriaQuery<Phone> queryPhone = builder.createQuery(Phone.class);
-        Root<Phone> phoneRoot = queryPhone.from(Phone.class);
-        queryPhone.select(phoneRoot);
-
-        CriteriaQuery<Computer> queryComputer = builder.createQuery(Computer.class);
-        Root<Computer> computerRoot = queryComputer.from(Computer.class);
-        queryComputer.select(computerRoot);
-
-        CriteriaQuery<TV> queryTV = builder.createQuery(TV.class);
-        Root<TV> tvRoot = queryTV.from(TV.class);
-        queryTV.select(tvRoot);
-
         List<Phone> listPhone = new ArrayList<>();
         List<Computer> listComputer = new ArrayList<>();
         List<TV> listTV = new ArrayList<>();
@@ -62,17 +51,17 @@ public class TestServlet extends HttpServlet {
             session.save(minmax);
         }
 
-        for (Phone i : session.createQuery(queryPhone).getResultList()) {
+        for (Phone i : Comands.phoneList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
                 listPhone.add(i);
             }
         }
-        for (Computer i : session.createQuery(queryComputer).getResultList()) {
+        for (Computer i : Comands.computerList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
                 listComputer.add(i);
             }
         }
-        for (TV i : session.createQuery(queryTV).getResultList()) {
+        for (TV i : Comands.tvList()) {
             if (i.getPower() >= min && i.getPower() <= max) {
                 listTV.add(i);
             }
@@ -83,8 +72,6 @@ public class TestServlet extends HttpServlet {
         request.setAttribute("Phone", listPhone);
         request.setAttribute("Computer", listComputer);
         request.setAttribute("TV", listTV);
-
-        //Search.mySearch(request,response);
 
         request.getRequestDispatcher("/test.jsp").forward(request, response);
     }

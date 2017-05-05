@@ -1,16 +1,11 @@
 package dao.processing;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-
 /**
  * Created by frost on 13.03.2017.
  */
 public class Search {
 
-    public static void mySearch( HttpServletRequest request, HttpServletResponse response) throws IOException {
+//    public static void mySearch( HttpServletRequest request, HttpServletResponse response) throws IOException {
 //        Session session = HibernateSessionFactory.getSessionFactory().openSession();
 //        session.beginTransaction();
 //        CriteriaBuilder builder = session.getCriteriaBuilder();
@@ -77,6 +72,6 @@ public class Search {
 //        request.setAttribute("Phone", listPhone);
 //        request.setAttribute("Computer", listComputer);
 //        request.setAttribute("TV", listTV);
-
-    }
+//
+//    }
 }

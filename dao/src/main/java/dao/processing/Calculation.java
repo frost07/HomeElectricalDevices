@@ -3,7 +3,8 @@ package dao.processing;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import dao.HibernateSessionFactory;
-import model.myDevices.*;
+import model.myDevices.Devices;
+import model.myDevices.TotalPower;
 import org.hibernate.Session;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -21,39 +22,22 @@ public class Calculation {
     public static void usedPower(HttpServletResponse response) throws IOException {
 
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
-        session.beginTransaction();
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-
-        CriteriaQuery<Phone> queryPhone = builder.createQuery(Phone.class);
-        Root<Phone> phoneRoot = queryPhone.from(Phone.class);
-        queryPhone.select(phoneRoot);
-
-        CriteriaQuery<Computer> queryComputer = builder.createQuery(Computer.class);
-        Root<Computer> computerRoot = queryComputer.from(Computer.class);
-        queryComputer.select(computerRoot);
-
-        CriteriaQuery<TV> queryTV = builder.createQuery(TV.class);
-        Root<TV> tvRoot = queryTV.from(TV.class);
-        queryTV.select(tvRoot);
-
-
-        session.getTransaction().commit();
 
        int summPhone = 0;
        int summTV = 0;
        int summComputer = 0;
 
-        for (Devices i : session.createQuery(queryPhone).getResultList()) {
+        for (Devices i : Comands.phoneList()) {
             if (i.getState() == 1) {
                 summPhone += i.getPower();
             }
         }
-        for (Devices i : session.createQuery(queryComputer).getResultList()) {
+        for (Devices i : Comands.computerList()) {
             if (i.getState() == 1) {
                 summComputer += i.getPower();
             }
         }
-        for (Devices i : session.createQuery(queryTV).getResultList()) {
+        for (Devices i : Comands.tvList()) {
             if (i.getState() == 1) {
                 summTV += i.getPower();
             }
@@ -68,7 +52,7 @@ public class Calculation {
         CriteriaQuery<TotalPower> query = builderResult.createQuery(TotalPower.class);
         Root<TotalPower> Root = query.from(TotalPower.class);
         Predicate condition = builderResult.equal(Root.get("id"), id);
-        queryTV.select(tvRoot).where(condition);
+        query.select(Root).where(condition);
         List<TotalPower> required = session.createQuery(query).getResultList();
 
         if (required!= null && required.size() > 0) {
